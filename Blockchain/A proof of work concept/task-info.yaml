@@ -1,0 +1,17 @@
+type: edu
+custom_name: stage2
+files:
+- name: test/BlockchainTest.java
+  visible: false
+  text: |
+    import blockchain.Main;
+    import org.hyperskill.hstest.v6.stage.BaseStageTest;
+    import org.hyperskill.hstest.v6.testcase.CheckResult;
+    import org.hyperskill.hstest.v6.testcase.TestCase;
+
+    import java.util.ArrayList;
+    import java.util.List;
+    import java.util.stream.Collectors;
+
+
+    class BlockParseException
