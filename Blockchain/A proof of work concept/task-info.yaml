@@ -14,4 +14,25 @@ files:
     import java.util.stream.Collectors;
 
 
-    class BlockParseException
+    class BlockParseException extends Exception {
+        BlockParseException(String msg) {
+            super(msg);
+        }
+    }
+
+
+    class Block {
+
+        int id;
+        long timestamp;
+        long magic;
+        String hashprev;
+        String hash;
+
+        static Block parseBlock(String strBlock) throws BlockParseException {
+            if (strBlock.length() == 0) {
+                return null;
+            }
+
+            if (!(strBlock.contains("Block:")
+                && strBlock.contains("Timestam
