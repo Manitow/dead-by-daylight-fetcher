@@ -54,4 +54,17 @@ files:
             }
 
             if (!lines.get(0).equals("Block:")) {
-             
+                throw new BlockParseException("First line of every block " +
+                    "should be \"Block:\"");
+            }
+
+            if (!lines.get(1).startsWith("Id:")) {
+                throw new BlockParseException("Second line of every block " +
+                    "should start with \"Id:\"");
+            }
+
+            String id = lines.get(1).split(":")[1]
+                .strip().replace("-", "");
+            boolean isNumeric = id.chars().allMatch(Character::isDigit);
+
+     
