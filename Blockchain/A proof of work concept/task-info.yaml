@@ -96,4 +96,17 @@ files:
                     "should start with \"Magic number:\"");
             }
 
-            String magic = lines.g
+            String magic = lines.get(3).split(":")[1]
+                .strip().replace("-", "");
+            isNumeric = magic.chars().allMatch(Character::isDigit);
+
+            if (!isNumeric) {
+                throw new BlockParseException("Timestamp should be a number");
+            }
+
+            block.magic = Long.parseLong(magic);
+
+
+
+            if (!lines.get(4).equals("Hash of the previous block:")) {
+                throw new BlockParseException("5-th line of every block " +
