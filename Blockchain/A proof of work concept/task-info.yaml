@@ -110,3 +110,15 @@ files:
 
             if (!lines.get(4).equals("Hash of the previous block:")) {
                 throw new BlockParseException("5-th line of every block " +
+                    "should be \"Hash of the previous block:\"");
+            }
+
+            if (!lines.get(6).equals("Hash of the block:")) {
+                throw new BlockParseException("7-th line of every block " +
+                    "should be \"Hash of the block:\"");
+            }
+
+            String prevhash = lines.get(5).strip();
+            String hash = lines.get(7).strip();
+
+            if (!(prevhash.length() == 64 || prevhash.equa
