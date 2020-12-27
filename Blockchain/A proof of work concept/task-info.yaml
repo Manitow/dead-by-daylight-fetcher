@@ -82,4 +82,18 @@ files:
 
             String timestamp = lines.get(2).split(":")[1]
                 .strip().replace("-", "");
-            isNume
+            isNumeric = timestamp.chars().allMatch(Character::isDigit);
+
+            if (!isNumeric) {
+                throw new BlockParseException("Timestamp should be a number");
+            }
+
+            block.timestamp = Long.parseLong(timestamp);
+
+
+            if (!lines.get(3).startsWith("Magic number:")) {
+                throw new BlockParseException("4-th line of every block " +
+                    "should start with \"Magic number:\"");
+            }
+
+            String magic = lines.g
