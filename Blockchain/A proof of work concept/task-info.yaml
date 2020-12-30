@@ -121,4 +121,20 @@ files:
             String prevhash = lines.get(5).strip();
             String hash = lines.get(7).strip();
 
-            if (!(prevhash.length() == 64 || prevhash.equa
+            if (!(prevhash.length() == 64 || prevhash.equals("0"))
+                || !(hash.length() == 64)) {
+
+                throw new BlockParseException("Hash length should " +
+                    "be equal to 64 except \"0\"");
+            }
+
+            block.hash = hash;
+            block.hashprev = prevhash;
+
+            return block;
+        }
+
+
+        static List<Block> parseBlocks(String output) throws BlockParseException {
+            String[] strBlocks = output.substring(
+                output.ind
