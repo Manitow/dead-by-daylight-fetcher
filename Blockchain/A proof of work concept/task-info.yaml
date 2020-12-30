@@ -137,4 +137,27 @@ files:
 
         static List<Block> parseBlocks(String output) throws BlockParseException {
             String[] strBlocks = output.substring(
-                output.ind
+                output.indexOf("Block:")).split("\n\n");
+
+            List<Block> blocks = new ArrayList<>();
+
+            for (String strBlock : strBlocks) {
+                Block block = parseBlock(strBlock.strip());
+                if (block != null) {
+                    blocks.add(block);
+                }
+            }
+
+            return blocks;
+        }
+    }
+
+    class Clue {
+        String zeros;
+        Clue(int n) {
+            zeros = "0".repeat(n);
+        }
+    }
+
+
+    public 
