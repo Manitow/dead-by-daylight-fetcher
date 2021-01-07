@@ -160,4 +160,16 @@ files:
     }
 
 
-    public 
+    public class BlockchainTest extends BaseStageTest<Clue> {
+        public BlockchainTest() {
+            super(Main.class);
+        }
+
+        List<String> previousOutputs = new ArrayList<>();
+
+        @Override
+        public List<TestCase<Clue>> generate() {
+            return List.of(
+                new TestCase<Clue>().setInput("0").setAttach(new Clue(0)),
+                new TestCase<Clue>().setInput("1").setAttach(new Clue(1)),
+                new TestC
