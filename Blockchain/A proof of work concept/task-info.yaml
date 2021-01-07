@@ -172,4 +172,15 @@ files:
             return List.of(
                 new TestCase<Clue>().setInput("0").setAttach(new Clue(0)),
                 new TestCase<Clue>().setInput("1").setAttach(new Clue(1)),
-                new TestC
+                new TestCase<Clue>().setInput("2").setAttach(new Clue(2)),
+                new TestCase<Clue>().setInput("0").setAttach(new Clue(0)),
+                new TestCase<Clue>().setInput("1").setAttach(new Clue(1)),
+                new TestCase<Clue>().setInput("2").setAttach(new Clue(2))
+            );
+        }
+
+        @Override
+        public CheckResult check(String reply, Clue clue) {
+
+            if (previousOutputs.contains(reply)) {
+                return new CheckResult(fals
