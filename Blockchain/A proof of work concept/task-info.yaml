@@ -183,4 +183,20 @@ files:
         public CheckResult check(String reply, Clue clue) {
 
             if (previousOutputs.contains(reply)) {
-                return new CheckResult(fals
+                return new CheckResult(false,
+                    "You already printed this text in the previous tests");
+            }
+
+            previousOutputs.add(reply);
+
+            List<Block> blocks;
+            try {
+                blocks = Block.parseBlocks(reply);
+            } catch (BlockParseException ex) {
+                return new CheckResult(false, ex.getMessage());
+            } catch (Exception ex) {
+                return CheckResult.FALSE;
+            }
+
+            if (blocks.size() != 5) {
+                return new CheckResult(false,
