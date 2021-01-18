@@ -224,4 +224,24 @@ files:
 
                 if (!next.hash.startsWith(clue.zeros)) {
                     return new CheckResult(false,
-       
+                        "Hash should start with some zeros");
+                }
+            }
+
+
+            return CheckResult.TRUE;
+        }
+    }
+  learner_created: false
+- name: src/blockchain/Main.java
+  visible: true
+  text: |
+    package blockchain;
+
+    public class Main {
+        public static void main(String[] args) {
+            System.out.println("Hello World!");
+        }
+    }
+  learner_created: false
+- name: src/blockchain/StringUtil.ja
