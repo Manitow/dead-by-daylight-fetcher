@@ -212,4 +212,16 @@ files:
                         "Id`s of blocks should increase by 1");
                 }
 
-                if (n
+                if (next.timestamp < curr.timestamp) {
+                    return new CheckResult(false,
+                        "Timestamp`s of blocks should increase");
+                }s
+
+                if (!next.hashprev.equals(curr.hash)) {
+                    return new CheckResult(false, "Two hashes aren't equal, " +
+                        "but should");
+                }
+
+                if (!next.hash.startsWith(clue.zeros)) {
+                    return new CheckResult(false,
+       
