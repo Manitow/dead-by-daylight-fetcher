@@ -200,3 +200,16 @@ files:
 
             if (blocks.size() != 5) {
                 return new CheckResult(false,
+                    "You should output 5 blocks, found " + blocks.size());
+            }
+
+            for (int i = 1; i < blocks.size(); i++) {
+                Block curr = blocks.get(i - 1);
+                Block next = blocks.get(i);
+
+                if (curr.id + 1 != next.id) {
+                    return new CheckResult(false,
+                        "Id`s of blocks should increase by 1");
+                }
+
+                if (n
