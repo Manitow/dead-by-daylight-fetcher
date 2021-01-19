@@ -244,4 +244,18 @@ files:
         }
     }
   learner_created: false
-- name: src/blockchain/StringUtil.ja
+- name: src/blockchain/StringUtil.java
+  visible: true
+  text: |
+    package blockchain;
+
+    import java.nio.charset.StandardCharsets;
+    import java.security.MessageDigest;
+
+    class StringUtil {
+        /* Applies Sha256 to a string and returns a hash. */
+        public static String applySha256(String input) {
+            try {
+                MessageDigest digest = MessageDigest.getInstance("SHA-256");
+                /* Applies sha256 to our input */
+                byte[] hash = digest.digest(input.getBytes(StandardC
