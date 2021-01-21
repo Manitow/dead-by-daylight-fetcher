@@ -271,4 +271,25 @@ files:
             }
         }
     }
-  learner_creat
+  learner_created: true
+- name: src/blockchain/BlockFactory.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/Block.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/BaseBlock.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/SimpleBlock.java
+  visible: true
+  text: |
+    package blockchain;
+
+    import java.util.StringJoiner;
+
+    public class Block {
+        public final int id;
+        public final long timestamp;
+        public final String hash;
+    
