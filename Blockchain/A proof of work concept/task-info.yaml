@@ -308,4 +308,18 @@ files:
         @Override
         public String toString() {
             return new StringJoiner("\n")
-             
+                    .add("Block:")
+                    .add("Id: " + id)
+                    .add("Timestamp: " + timestamp)
+                    .add("Hash of the previous block:")
+                    .add(previous)
+                    .add("Hash of the block:")
+                    .add(hash)
+                    .toString();
+        }
+    }
+  learner_created: true
+- name: src/blockchain/SimpleBlockFactory.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/SimpleBloc
