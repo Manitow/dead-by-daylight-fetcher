@@ -322,4 +322,23 @@ files:
 - name: src/blockchain/SimpleBlockFactory.java
   visible: true
   learner_created: true
-- name: src/blockchain/SimpleBloc
+- name: src/blockchain/SimpleBlockchain.java
+  visible: true
+  text: |
+    package blockchain;
+
+    import java.util.ArrayDeque;
+    import java.util.Date;
+    import java.util.Deque;
+    import java.util.StringJoiner;
+
+    public class Blockchain {
+        private final Deque<Block> blocks = new ArrayDeque<>();
+
+        private int blockId = 1;
+
+        public void generateNewBlock() {
+            Block last = getLast();
+            Block next;
+            if (last == null) {
+                next = new Block(getId(), getTimestamp(), 
