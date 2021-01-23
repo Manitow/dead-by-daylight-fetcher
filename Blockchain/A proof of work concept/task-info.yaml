@@ -361,4 +361,20 @@ files:
         }
 
         protected String getHash() {
-            return StringUtil.applySha256(String.
+            return StringUtil.applySha256(String.valueOf(new Date().getTime() + blockId));
+        }
+
+        @Override
+        public String toString() {
+            StringJoiner joiner = new StringJoiner("\n\n");
+            for (Block block : blocks) {
+                joiner.add(block.toString());
+            }
+            return joiner.toString();
+        }
+    }
+  learner_created: true
+- name: src/blockchain/Blockchain.java
+  visible: true
+  learner_created: true
+feedback_li
