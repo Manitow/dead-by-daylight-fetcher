@@ -341,4 +341,24 @@ files:
             Block last = getLast();
             Block next;
             if (last == null) {
-                next = new Block(getId(), getTimestamp(), 
+                next = new Block(getId(), getTimestamp(), getHash());
+            } else {
+                next = new Block(getId(), getTimestamp(), getHash(), last.hash);
+            }
+            blocks.add(next);
+        }
+
+        protected Block getLast() {
+            return blocks.peekLast();
+        }
+
+        protected int getId() {
+            return blockId++;
+        }
+
+        protected long getTimestamp() {
+            return new Date().getTime();
+        }
+
+        protected String getHash() {
+            return StringUtil.applySha256(String.
