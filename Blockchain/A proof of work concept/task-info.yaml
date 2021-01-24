@@ -377,4 +377,6 @@ files:
 - name: src/blockchain/Blockchain.java
   visible: true
   learner_created: true
-feedback_li
+feedback_link: https://hyperskill.org/projects/50/stages/272/implement
+status: Solved
+record: 2
