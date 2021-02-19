@@ -156,3 +156,58 @@ files:
             if (previousOutputs.contains(reply)) {
                 return new CheckResult(false,
                     "You already printed this text in the previous tests");
+            }
+
+            previousOutputs.add(reply);
+
+            List<Block> blocks;
+            try {
+                blocks = Block.parseBlocks(reply);
+            } catch (BlockParseException ex) {
+                return new CheckResult(false, ex.getMessage());
+            } catch (Exception ex) {
+                return CheckResult.FALSE;
+            }
+
+            if (blocks.size() != 5) {
+                return new CheckResult(false,
+                    "You should output 5 blocks, found " + blocks.size());
+            }
+
+            Block first = blocks.get(0);
+            if (!first.hashprev.equals("0")) {
+                return new CheckResult(false,
+                    "Previous hash of the first block should be \"0\"");
+            }
+
+            for (int i = 1; i < blocks.size(); i++) {
+                Block curr = blocks.get(i - 1);
+                Block next = blocks.get(i);
+
+                if (curr.id + 1 != next.id) {
+                    return new CheckResult(false,
+                        "Id`s of blocks should increase by 1");
+                }
+
+                if (next.timestamp < curr.timestamp) {
+                    return new CheckResult(false,
+                        "Timestamp`s of blocks should increase");
+                }
+
+                if (!next.hashprev.equals(curr.hash)) {
+                    return new CheckResult(false, "Two hashes aren't equal, " +
+                        "but should");
+                }
+            }
+
+
+            return CheckResult.TRUE;
+        }
+    }
+  learner_created: false
+- name: src/blockchain/Blockchain.java
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/projects/50/stages/271/implement
+status: Solved
+record: 1
