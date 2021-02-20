@@ -1,0 +1,9 @@
+type: edu
+custom_name: stage5
+files:
+- name: test/BlockchainTest.java
+  visible: false
+  text: |
+    import blockchain.Main;
+    import org.hyperskill.hstest.v6.stage.BaseStageTest;
+    import org.hype
