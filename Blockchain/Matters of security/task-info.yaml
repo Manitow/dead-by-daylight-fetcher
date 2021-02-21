@@ -46,4 +46,17 @@ files:
                 .lines()
                 .map(String::strip)
                 .filter(e -> e.length() > 0)
- 
+                .collect(Collectors.toList());
+
+            if (lines.size() < 12) {
+                throw new BlockParseException("Every block should " +
+                    "contain at least 12 lines of data");
+            }
+
+            if (!lines.get(0).equals("Block:")) {
+                throw new BlockParseException("First line of every block " +
+                    "should be \"Block:\"");
+            }
+
+            if (!lines.get(1).startsWith("Created by")) {
+                throw new BlockParseException("Secon
