@@ -72,4 +72,19 @@ files:
                 .strip().replace("-", "");
             boolean isNumeric = id.chars().allMatch(Character::isDigit);
 
-            if (!i
+            if (!isNumeric) {
+                throw new BlockParseException("Id should be a number");
+            }
+
+            block.id = Integer.parseInt(id);
+
+
+
+            if (!lines.get(3).startsWith("Timestamp:")) {
+                throw new BlockParseException("4-th line of every block " +
+                    "should start with \"Timestamp:\"");
+            }
+
+            String timestamp = lines.get(3).split(":")[1]
+                .strip().replace("-", "");
+            isNumeric = timestamp.chars().all
