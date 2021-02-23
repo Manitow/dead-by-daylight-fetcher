@@ -59,4 +59,17 @@ files:
             }
 
             if (!lines.get(1).startsWith("Created by")) {
-                throw new BlockParseException("Secon
+                throw new BlockParseException("Second line of every block " +
+                    "should start with \"Created by\"");
+            }
+
+            if (!lines.get(2).startsWith("Id:")) {
+                throw new BlockParseException("Third line of every block " +
+                    "should start with \"Id:\"");
+            }
+
+            String id = lines.get(2).split(":")[1]
+                .strip().replace("-", "");
+            boolean isNumeric = id.chars().allMatch(Character::isDigit);
+
+            if (!i
