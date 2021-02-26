@@ -114,4 +114,16 @@ files:
 
 
             if (!lines.get(5).equals("Hash of the previous block:")) {
-                throw new BlockParseExcept
+                throw new BlockParseException("6-th line of every block " +
+                    "should be \"Hash of the previous block:\"");
+            }
+
+            if (!lines.get(7).equals("Hash of the block:")) {
+                throw new BlockParseException("8-th line of every block " +
+                    "should be \"Hash of the block:\"");
+            }
+
+            String prevhash = lines.get(6).strip();
+            String hash = lines.get(8).strip();
+
+            
