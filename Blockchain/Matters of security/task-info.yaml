@@ -197,4 +197,17 @@ files:
             List<Block> blocks;
             try {
                 blocks = Block.parseBlocks(reply);
-            } catch (Bl
+            } catch (BlockParseException ex) {
+                return new CheckResult(false, ex.getMessage());
+            } catch (Exception ex) {
+                return CheckResult.FALSE;
+            }
+
+            if (blocks.size() != 5) {
+                return new CheckResult(false,
+                    "You should output 5 blocks, found " + blocks.size());
+            }
+
+            for (int i = 1; i < blocks.size(); i++) {
+                Block curr = blocks.get(i - 1);
+                
