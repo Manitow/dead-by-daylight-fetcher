@@ -180,4 +180,21 @@ files:
         public List<TestCase<Clue>> generate() {
             return List.of(
                 new TestCase<>(),
- 
+                new TestCase<>()
+            );
+        }
+
+        @Override
+        public CheckResult check(String reply, Clue clue) {
+
+            if (previousOutputs.contains(reply)) {
+                return new CheckResult(false,
+                    "You already printed this text in the previous tests");
+            }
+
+            previousOutputs.add(reply);
+
+            List<Block> blocks;
+            try {
+                blocks = Block.parseBlocks(reply);
+            } catch (Bl
