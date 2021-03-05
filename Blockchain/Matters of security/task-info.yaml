@@ -154,4 +154,30 @@ files:
                 Block block = parseBlock(strBlock.strip());
                 if (block != null) {
                     blocks.add(block);
-      
+                }
+            }
+
+            return blocks;
+        }
+    }
+
+    class Clue {
+        String zeros;
+        Clue(int n) {
+            zeros = "0".repeat(n);
+        }
+    }
+
+
+    public class BlockchainTest extends BaseStageTest<Clue> {
+        public BlockchainTest() {
+            super(Main.class);
+        }
+
+        List<String> previousOutputs = new ArrayList<>();
+
+        @Override
+        public List<TestCase<Clue>> generate() {
+            return List.of(
+                new TestCase<>(),
+ 
