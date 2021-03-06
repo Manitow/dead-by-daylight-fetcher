@@ -223,4 +223,25 @@ files:
                 }
 
                 if (!next.hashprev.equals(curr.hash)) {
-                    retu
+                    return new CheckResult(false, "Two hashes aren't equal, " +
+                        "but should");
+                }
+            }
+
+
+            return CheckResult.TRUE;
+        }
+    }
+  learner_created: false
+- name: src/blockchain/Main.java
+  visible: true
+  text: |
+    package blockchain;
+
+    public class Main {
+        public static void main(String[] args) {
+            System.out.println("Hello World!");
+        }
+    }
+  learner_created: false
+- name: sr
