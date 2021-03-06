@@ -279,4 +279,20 @@ files:
                 decreasedCount = 0;
                 return "N stays the same";
             } else {
- 
+                ++count;
+                decreasedCount = 0;
+                return "N was increased to " + ++increasedCount;
+            }
+        }
+    }
+  learner_created: true
+- name: src/blockchain/block/ImmutablePartBlockParams.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    import java.util.Objects;
+
+    public class ImmutablePartBlockParams implements PartBlockParams {
+        protected final long id;
+        protected final String previousHas
