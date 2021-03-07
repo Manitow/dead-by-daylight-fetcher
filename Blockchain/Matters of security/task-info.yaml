@@ -316,4 +316,19 @@ files:
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            Immutabl
+            ImmutablePartBlockParams that = (ImmutablePartBlockParams) o;
+            return id == that.id &&
+                    Objects.equals(previousHash, that.previousHash);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(id, previousHash);
+        }
+
+        @Override
+        public String toString() {
+            return "ImmutablePartBlockParams{" +
+                    "id=" + id +
+                    ", previousHash='" + previousHash + '\'' +
+               
