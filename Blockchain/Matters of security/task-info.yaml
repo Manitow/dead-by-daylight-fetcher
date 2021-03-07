@@ -331,4 +331,21 @@ files:
             return "ImmutablePartBlockParams{" +
                     "id=" + id +
                     ", previousHash='" + previousHash + '\'' +
-               
+                    '}';
+        }
+    }
+  learner_created: true
+- name: src/blockchain/NZerosBlockchain.java
+  visible: true
+  text: |
+    package blockchain;
+
+    import blockchain.block.Block;
+    import blockchain.block.ImmutablePartBlockParams;
+    import blockchain.block.NZerosBlock;
+    import blockchain.block.PartBlockParams;
+    import blockchain.hash.HashApprover;
+    import blockchain.hash.NZerosHashApprover;
+
+    import java.util.ArrayDeque;
+   
