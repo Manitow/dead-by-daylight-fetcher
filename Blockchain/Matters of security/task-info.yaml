@@ -348,4 +348,18 @@ files:
     import blockchain.hash.NZerosHashApprover;
 
     import java.util.ArrayDeque;
-   
+    import java.util.Deque;
+    import java.util.StringJoiner;
+
+    public class NZerosBlockchain implements Blockchain {
+        protected final Deque<Block> blocks = new ArrayDeque<>();
+
+        protected long id;
+        protected NZeros nZeros;
+        protected NZerosHashApprover approver;
+        protected PartBlockParams params;
+        protected StringJoiner dataStore;
+
+        public NZerosBlockchain() {
+            this.id = 0;
+            this.nZeros = ne
