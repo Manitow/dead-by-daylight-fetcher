@@ -362,4 +362,20 @@ files:
 
         public NZerosBlockchain() {
             this.id = 0;
-            this.nZeros = ne
+            this.nZeros = new NZeros(0);
+            prepareNext();
+        }
+
+        private void prepareNext() {
+            this.approver = new NZerosHashApprover(nZeros.getCount());
+            this.params = new ImmutablePartBlockParams(id++, getLastHash());
+            this.dataStore = new StringJoiner("\n");
+        }
+
+        @Override
+        public HashApprover getApprover() {
+            return approver;
+        }
+
+        @Override
+        public PartBlockParams getN
