@@ -378,4 +378,17 @@ files:
         }
 
         @Override
-        public PartBlockParams getN
+        public PartBlockParams getNextParams() {
+            return params;
+        }
+
+        @Override
+        public boolean accept(Block block) {
+            String previousHash = getLastHash();
+            if (!previousHash.equals(block.getPreviousHash())) {
+                return false;
+            }
+            synchronized (this) {
+                String nStatus = nZeros.getNextStatus();
+                String data = dataStore.toString();
+                NZerosBlock nextBlock = new NZero
