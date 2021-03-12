@@ -391,4 +391,19 @@ files:
             synchronized (this) {
                 String nStatus = nZeros.getNextStatus();
                 String data = dataStore.toString();
-                NZerosBlock nextBlock = new NZero
+                NZerosBlock nextBlock = new NZerosBlock(block, nStatus, data);
+                blocks.add(nextBlock);
+                prepareNext();
+            }
+            return true;
+        }
+
+        private String getLastHash() {
+            Block last = blocks.peekLast();
+            return last != null ? last.getHash() : "0";
+        }
+
+        @Override
+        public synchronized void include(String data) {
+            if (!blocks.isEmpty()) {
+                dataStore.add
