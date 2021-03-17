@@ -406,4 +406,23 @@ files:
         @Override
         public synchronized void include(String data) {
             if (!blocks.isEmpty()) {
-                dataStore.add
+                dataStore.add(data);
+            }
+        }
+
+        @Override
+        public String toString() {
+            StringJoiner joiner = new StringJoiner("\n\n");
+            for (Block block : blocks) {
+                joiner.add(block.toString());
+            }
+            return joiner.toString();
+        }
+    }
+  learner_created: true
+- name: src/blockchain/block/ImmutableBlock.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    import java.u
