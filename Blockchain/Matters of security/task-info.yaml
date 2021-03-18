@@ -425,4 +425,18 @@ files:
   text: |
     package blockchain.block;
 
-    import java.u
+    import java.util.Objects;
+
+    public class ImmutableBlock implements Block {
+        public static final ImmutableBlock EMPTY = new ImmutableBlock();
+
+        protected final long id;
+        protected final long timestamp;
+        protected final long runtime;
+        protected final long magicNumber;
+        protected final String hash;
+        protected final String previousHash;
+        protected final String owner;
+
+        private ImmutableBlock() {
+            this(-1, -1
