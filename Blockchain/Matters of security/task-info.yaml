@@ -462,4 +462,26 @@ files:
                                  String hash, String previousHash, String owner) {
             this.id = id;
             this.timestamp = timestamp;
-            this.
+            this.runtime = runtime;
+            this.magicNumber = magicNumber;
+            this.hash = hash;
+            this.previousHash = previousHash;
+            this.owner = owner;
+        }
+
+        @Override
+        public long getId() {
+            return id;
+        }
+
+        @Override
+        public long getTimestamp() {
+            return timestamp;
+        }
+
+        @Override
+        public long getRuntime() {
+            return runtime;
+        }
+
+ 
