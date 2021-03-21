@@ -453,4 +453,13 @@ files:
             this.owner = params.getOwner();
         }
 
-        protected ImmutableBlo
+        protected ImmutableBlock(Block block) {
+            this(block.getId(), block.getTimestamp(), block.getRuntime(), block.getMagicNumber(),
+                    block.getHash(), block.getPreviousHash(), block.getOwner());
+        }
+
+        protected ImmutableBlock(long id, long timestamp, long runtime, long magicNumber,
+                                 String hash, String previousHash, String owner) {
+            this.id = id;
+            this.timestamp = timestamp;
+            this.
