@@ -439,4 +439,18 @@ files:
         protected final String owner;
 
         private ImmutableBlock() {
-            this(-1, -1
+            this(-1, -1, -1, -1,
+                    "none", "none", "none");
+        }
+
+        public ImmutableBlock(BlockParams params) {
+            this.id = params.getId();
+            this.timestamp = params.getTimestamp();
+            this.runtime = params.getRuntime();
+            this.magicNumber = params.getMagicNumber();
+            this.hash = params.getHash();
+            this.previousHash = params.getPreviousHash();
+            this.owner = params.getOwner();
+        }
+
+        protected ImmutableBlo
