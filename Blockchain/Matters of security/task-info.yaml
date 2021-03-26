@@ -484,4 +484,27 @@ files:
             return runtime;
         }
 
- 
+        @Override
+        public long getMagicNumber() {
+            return magicNumber;
+        }
+
+        @Override
+        public String getHash() {
+            return hash;
+        }
+
+        @Override
+        public String getPreviousHash() {
+            return previousHash;
+        }
+
+        @Override
+        public String getOwner() {
+            return owner;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+     
