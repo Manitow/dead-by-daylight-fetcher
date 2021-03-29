@@ -515,4 +515,19 @@ files:
                     magicNumber == that.magicNumber &&
                     Objects.equals(hash, that.hash) &&
                     Objects.equals(previousHash, that.previousHash) &&
-                    Objects.equals(o
+                    Objects.equals(owner, that.owner);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(id, timestamp, runtime, magicNumber, hash, previousHash, owner);
+        }
+
+        @Override
+        public String toString() {
+            return "ImmutableBlock{" +
+                    "id=" + id +
+                    ", timestamp=" + timestamp +
+                    ", runtime=" + runtime +
+                    ", magicNumber=" + magicNumber +
+               
