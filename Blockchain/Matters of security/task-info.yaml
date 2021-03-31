@@ -530,4 +530,19 @@ files:
                     ", timestamp=" + timestamp +
                     ", runtime=" + runtime +
                     ", magicNumber=" + magicNumber +
-               
+                    ", hash='" + hash + '\'' +
+                    ", previousHash='" + previousHash + '\'' +
+                    ", owner='" + owner + '\'' +
+                    '}';
+        }
+    }
+  learner_created: true
+- name: src/blockchain/hash/SHA256HashFunction.java
+  visible: true
+  text: |
+    package blockchain.hash;
+
+    import java.nio.charset.StandardCharsets;
+    import java.security.MessageDigest;
+
+    public class SHA256HashFunction implement
