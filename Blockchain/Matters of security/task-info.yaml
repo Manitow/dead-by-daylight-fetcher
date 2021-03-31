@@ -573,4 +573,21 @@ files:
     public interface HashFunction {
         String hash(String input);
 
-        def
+        default String hash(long input) {
+            return hash(Long.toString(input));
+        }
+    }
+  learner_created: true
+- name: src/blockchain/block/NZerosBlock.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    import java.util.Objects;
+    import java.util.StringJoiner;
+
+    public class NZerosBlock extends ImmutableBlock {
+        protected final String nStatus;
+        protected final String data;
+
+        public NZerosBlock(Block block, String nStatus, String data)
