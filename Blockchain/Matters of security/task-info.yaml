@@ -590,4 +590,20 @@ files:
         protected final String nStatus;
         protected final String data;
 
-        public NZerosBlock(Block block, String nStatus, String data)
+        public NZerosBlock(Block block, String nStatus, String data) {
+            super(block);
+            this.nStatus = nStatus;
+            this.data = data;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            if (!super.equals(o)) return false;
+            NZerosBlock that = (NZerosBlock) o;
+            return Objects.equals(nStatus, that.nStatus) &&
+                    Objects.equals(data, that.data);
+        }
+
+      
