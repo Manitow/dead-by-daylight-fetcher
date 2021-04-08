@@ -630,4 +630,28 @@ files:
         }
     }
   learner_created: true
-- name: src/blockchain/mining/Min
+- name: src/blockchain/mining/Miner.java
+  visible: true
+  text: |
+    package blockchain.mining;
+
+    import blockchain.block.Block;
+
+    @FunctionalInterface
+    public interface Miner {
+        Block mine();
+    }
+  learner_created: true
+- name: src/blockchain/util/CommonUtils.java
+  visible: true
+  text: |
+    package blockchain.util;
+
+    import java.util.Date;
+
+    public class CommonUtils {
+        public static long getTimestamp() {
+            return new Date().getTime();
+        }
+    }
+  l
