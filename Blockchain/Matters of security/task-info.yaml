@@ -774,4 +774,23 @@ files:
     import blockchain.hash.HashApprover;
 
     public interface Blockchain {
-        HashApprover
+        HashApprover getApprover();
+
+        PartBlockParams getNextParams();
+
+        boolean accept(Block block);
+
+        void include(String data);
+    }
+  learner_created: true
+- name: src/blockchain/hash/NZerosHashApprover.java
+  visible: true
+  text: |
+    package blockchain.hash;
+
+    public class NZerosHashApprover implements HashApprover {
+        private final String zeros;
+
+        public NZerosHashApprover(int n) {
+            this.zeros = "0".repeat(n);
+      
