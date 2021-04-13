@@ -746,4 +746,16 @@ files:
         }
 
         @Override
-        pub
+        public int hashCode() {
+            return Objects.hash(id, timestamp, runtime, magicNumber, hash, previousHash, owner);
+        }
+
+        @Override
+        public String toString() {
+            return "SimpleBlockParams{" +
+                    "id=" + id +
+                    ", timestamp=" + timestamp +
+                    ", runtime=" + runtime +
+                    ", magicNumber=" + magicNumber +
+                    ", hash='" + hash + '\'' +
+        
