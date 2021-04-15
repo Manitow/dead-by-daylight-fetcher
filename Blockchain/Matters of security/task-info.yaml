@@ -793,4 +793,22 @@ files:
 
         public NZerosHashApprover(int n) {
             this.zeros = "0".repeat(n);
-      
+        }
+
+        @Override
+        public boolean approve(String hash) {
+            return hash.startsWith(zeros);
+        }
+    }
+  learner_created: true
+- name: src/blockchain/mining/SimpleMinerParams.java
+  visible: true
+  text: |
+    package blockchain.mining;
+
+    import blockchain.block.PartBlockParams;
+    import blockchain.hash.HashApprover;
+    import blockchain.hash.HashFunction;
+
+    public class SimpleMinerParams implements MinerParams {
+        private Stri
