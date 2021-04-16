@@ -848,4 +848,26 @@ files:
             return blockParams;
         }
 
-        public void setBlockParams(Par
+        public void setBlockParams(PartBlockParams blockParams) {
+            this.blockParams = blockParams;
+        }
+    }
+  learner_created: true
+- name: src/blockchain/block/BlockParams.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    public interface BlockParams extends PartBlockParams {
+        long getTimestamp();
+
+        long getRuntime();
+
+        long getMagicNumber();
+
+        String getHash();
+
+        String getOwner();
+    }
+  learner_created: true
+-
