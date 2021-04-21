@@ -889,4 +889,31 @@ files:
         PartBlockParams getBlockParams();
     }
   learner_created: true
-- name: src/
+- name: src/blockchain/block/Block.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    public interface Block {
+        long getId();
+
+        long getRuntime();
+
+        long getTimestamp();
+
+        long getMagicNumber();
+
+        String getHash();
+
+        String getPreviousHash();
+
+        String getOwner();
+    }
+  learner_created: true
+- name: src/blockchain/mining/ComputeMiner.java
+  visible: true
+  text: |
+    package blockchain.mining;
+
+    import blockchain.block.Block;
+    import blockchain.block.Immuta
