@@ -916,4 +916,18 @@ files:
     package blockchain.mining;
 
     import blockchain.block.Block;
-    import blockchain.block.Immuta
+    import blockchain.block.ImmutableBlock;
+    import blockchain.block.PartBlockParams;
+    import blockchain.block.SimpleBlockParams;
+    import blockchain.hash.HashApprover;
+    import blockchain.hash.HashFunction;
+
+    import java.util.Random;
+
+    import static blockchain.util.CommonUtils.getTimestamp;
+
+    public class ComputeMiner implements Miner {
+        private final String name;
+        private final HashFunction hashFunction;
+        private final HashApprover hashApprover;
+        private final 
