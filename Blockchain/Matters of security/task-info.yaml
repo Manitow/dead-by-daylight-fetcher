@@ -958,4 +958,20 @@ files:
                 }
             } while (!hashApprover.approve(hash));
             long end = getTimestamp();
-            SimpleBlockParams params 
+            SimpleBlockParams params = new SimpleBlockParams(blockParams);
+            params.setTimestamp(getTimestamp());
+            params.setRuntime(end - start);
+            params.setMagicNumber(magicNumber);
+            params.setHash(hash);
+            params.setOwner(name);
+            return new ImmutableBlock(params);
+        }
+    }
+  learner_created: true
+- name: src/blockchain/hash/HashApprover.java
+  visible: true
+  text: |
+    package blockchain.hash;
+
+    @FunctionalInterface
+    publi
