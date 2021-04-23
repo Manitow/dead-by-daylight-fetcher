@@ -974,4 +974,25 @@ files:
     package blockchain.hash;
 
     @FunctionalInterface
-    publi
+    public interface HashApprover {
+        boolean approve(String hash);
+    }
+  learner_created: true
+- name: src/blockchain/block/PartBlockParams.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    public interface PartBlockParams {
+        long getId();
+
+        String getPreviousHash();
+    }
+  learner_created: true
+- name: src/blockchain/data/MessageProducer.java
+  visible: true
+  text: |
+    package blockchain.data;
+
+    import java.util.List;
+    import 
