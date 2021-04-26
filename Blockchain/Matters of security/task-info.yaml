@@ -1027,4 +1027,18 @@ files:
             return say(text);
         }
 
-    
+        @Override
+        public void run() {
+            while (!Thread.currentThread().isInterrupted()) {
+                String data = get();
+                consumer.accept(data);
+                int timeout = random.nextInt(10);
+                try {
+                    TimeUnit.MILLISECONDS.sleep(timeout);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+        }
+    }
