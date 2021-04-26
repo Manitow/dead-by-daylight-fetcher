@@ -995,4 +995,15 @@ files:
     package blockchain.data;
 
     import java.util.List;
-    import 
+    import java.util.Random;
+    import java.util.concurrent.TimeUnit;
+    import java.util.function.Consumer;
+    import java.util.function.Supplier;
+
+    public class DataProducer implements Supplier<String>, Runnable {
+        protected final String name;
+        protected final List<String> texts;
+        protected final Consumer<String> consumer;
+        protected final Random random;
+
+        public DataProducer(String name, List<String> texts, Consumer<String> consumer) 
