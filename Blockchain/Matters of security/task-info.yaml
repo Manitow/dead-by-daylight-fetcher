@@ -1006,4 +1006,25 @@ files:
         protected final Consumer<String> consumer;
         protected final Random random;
 
-        public DataProducer(String name, List<String> texts, Consumer<String> consumer) 
+        public DataProducer(String name, List<String> texts, Consumer<String> consumer) {
+            this.name = name;
+            this.texts = texts;
+            this.consumer = consumer;
+            this.random = new Random();
+        }
+
+        protected String say(String text) {
+            return name + ": " + text;
+        }
+
+        protected String getRandomText() {
+            return texts.get(random.nextInt(texts.size()));
+        }
+
+        @Override
+        public String get() {
+            String text = getRandomText();
+            return say(text);
+        }
+
+    
