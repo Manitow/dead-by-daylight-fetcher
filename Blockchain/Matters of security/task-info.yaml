@@ -1042,3 +1042,20 @@ files:
             }
         }
     }
+  learner_created: true
+- name: src/blockchain/data/DataProducer.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/data/Data.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/data/Message.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/data/SignedData.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/data/SignedMessage.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/data/SignedMessag
