@@ -1058,4 +1058,19 @@ files:
 - name: src/blockchain/data/SignedMessage.java
   visible: true
   learner_created: true
-- name: src/blockchain/data/SignedMessag
+- name: src/blockchain/data/SignedMessageProducer.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/data/DataParams.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/data/ImmutableDataParams.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/util/Cryptographer.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/util/RSACryptographer.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/util/RSAGenerator.ja
