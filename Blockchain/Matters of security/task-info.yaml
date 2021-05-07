@@ -1073,4 +1073,15 @@ files:
 - name: src/blockchain/util/RSACryptographer.java
   visible: true
   learner_created: true
-- name: src/blockchain/util/RSAGenerator.ja
+- name: src/blockchain/util/RSAGenerator.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/util/KeysGenerator.java
+  visible: true
+  learner_created: true
+- name: src/blockchain/data/MessageProducerParams.java
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/projects/50/stages/275/implement
+status: Solved
+record: 7
