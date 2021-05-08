@@ -4,4 +4,6 @@
   <br>
   There is a special word for this: <strong>mining</strong>. The process of mining blocks is hard work for computers, like the process of mining minerals in real life is hard work. Computers that perform this task are called <strong>miners</strong>.<br>
   <br>
-  Note that if there are more miners, the new blocks will be mined faster. But the problem is that we want to create new blocks with a stable frequency. For this reason, the blockchain should regulate the number N: the number of zeros at the start of a hash of 
+  Note that if there are more miners, the new blocks will be mined faster. But the problem is that we want to create new blocks with a stable frequency. For this reason, the blockchain should regulate the number N: the number of zeros at the start of a hash of the new block. If suddenly there are so many miners that the new block is created in a matter of seconds, the complexity of the next block should be increased by increasing the number N. On the other hand, if there are so few miners that process of creating a new block takes longer than a minute, the number N should be lowered.<br>
+  <br>
+  In this stage, you should create a lot of threads with miners, and every one of them should contain the same blockchain. The miners should mine new blocks
