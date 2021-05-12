@@ -727,3 +727,257 @@ files:
             return id == that.id &&
                     timestamp == that.timestamp &&
                     runtime == that.runtime &&
+                    magicNumber == that.magicNumber &&
+                    Objects.equals(hash, that.hash) &&
+                    Objects.equals(previousHash, that.previousHash) &&
+                    Objects.equals(owner, that.owner);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(id, timestamp, runtime, magicNumber, hash, previousHash, owner);
+        }
+
+        @Override
+        public String toString() {
+            return "SimpleBlockParams{" +
+                    "id=" + id +
+                    ", timestamp=" + timestamp +
+                    ", runtime=" + runtime +
+                    ", magicNumber=" + magicNumber +
+                    ", hash='" + hash + '\'' +
+                    ", previousHash='" + previousHash + '\'' +
+                    ", owner='" + owner + '\'' +
+                    '}';
+        }
+    }
+  learner_created: true
+- name: src/blockchain/Blockchain.java
+  visible: true
+  text: |
+    package blockchain;
+
+    import blockchain.block.Block;
+    import blockchain.block.PartBlockParams;
+    import blockchain.hash.HashApprover;
+
+    public interface Blockchain {
+        HashApprover getApprover();
+
+        PartBlockParams getNextParams();
+
+        boolean accept(Block block);
+    }
+  learner_created: true
+- name: src/blockchain/hash/NZerosHashApprover.java
+  visible: true
+  text: |
+    package blockchain.hash;
+
+    public class NZerosHashApprover implements HashApprover {
+        private final String zeros;
+
+        public NZerosHashApprover(int n) {
+            this.zeros = "0".repeat(n);
+        }
+
+        @Override
+        public boolean approve(String hash) {
+            return hash.startsWith(zeros);
+        }
+    }
+  learner_created: true
+- name: src/blockchain/mining/SimpleMinerParams.java
+  visible: true
+  text: |
+    package blockchain.mining;
+
+    import blockchain.block.PartBlockParams;
+    import blockchain.hash.HashApprover;
+    import blockchain.hash.HashFunction;
+
+    public class SimpleMinerParams implements MinerParams {
+        private String name;
+        private HashFunction hashFunction;
+        private HashApprover hashApprover;
+        private PartBlockParams blockParams;
+
+        @Override
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public HashFunction getHashFunction() {
+            return hashFunction;
+        }
+
+        public void setHashFunction(HashFunction hashFunction) {
+            this.hashFunction = hashFunction;
+        }
+
+        @Override
+        public HashApprover getHashApprover() {
+            return hashApprover;
+        }
+
+        public void setHashApprover(HashApprover hashApprover) {
+            this.hashApprover = hashApprover;
+        }
+
+        @Override
+        public PartBlockParams getBlockParams() {
+            return blockParams;
+        }
+
+        public void setBlockParams(PartBlockParams blockParams) {
+            this.blockParams = blockParams;
+        }
+    }
+  learner_created: true
+- name: src/blockchain/block/BlockParams.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    public interface BlockParams extends PartBlockParams {
+        long getTimestamp();
+
+        long getRuntime();
+
+        long getMagicNumber();
+
+        String getHash();
+
+        String getOwner();
+    }
+  learner_created: true
+- name: src/blockchain/mining/MinerParams.java
+  visible: true
+  text: |
+    package blockchain.mining;
+
+    import blockchain.block.PartBlockParams;
+    import blockchain.hash.HashApprover;
+    import blockchain.hash.HashFunction;
+
+    public interface MinerParams {
+        String getName();
+
+        HashFunction getHashFunction();
+
+        HashApprover getHashApprover();
+
+        PartBlockParams getBlockParams();
+    }
+  learner_created: true
+- name: src/blockchain/block/Block.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    public interface Block {
+        long getId();
+
+        long getRuntime();
+
+        long getTimestamp();
+
+        long getMagicNumber();
+
+        String getHash();
+
+        String getPreviousHash();
+
+        String getOwner();
+    }
+  learner_created: true
+- name: src/blockchain/mining/ComputeMiner.java
+  visible: true
+  text: |
+    package blockchain.mining;
+
+    import blockchain.block.Block;
+    import blockchain.block.ImmutableBlock;
+    import blockchain.block.PartBlockParams;
+    import blockchain.block.SimpleBlockParams;
+    import blockchain.hash.HashApprover;
+    import blockchain.hash.HashFunction;
+
+    import java.util.Random;
+
+    import static blockchain.util.CommonUtils.getTimestamp;
+
+    public class ComputeMiner implements Miner {
+        private final String name;
+        private final HashFunction hashFunction;
+        private final HashApprover hashApprover;
+        private final PartBlockParams blockParams;
+        private final Random random;
+
+        public ComputeMiner(MinerParams params) {
+            this.name = params.getName();
+            this.hashFunction = params.getHashFunction();
+            this.hashApprover = params.getHashApprover();
+            this.blockParams = params.getBlockParams();
+            this.random = getRandom();
+        }
+
+        protected Random getRandom() {
+            return new Random();
+        }
+
+        @Override
+        public Block mine() {
+            long magicNumber;
+            String hash;
+            long start = getTimestamp();
+            do {
+                magicNumber = random.nextLong();
+                hash = hashFunction.hash(magicNumber);
+                if (Thread.currentThread().isInterrupted()) {
+                    return ImmutableBlock.EMPTY;
+                }
+            } while (!hashApprover.approve(hash));
+            long end = getTimestamp();
+            SimpleBlockParams params = new SimpleBlockParams(blockParams);
+            params.setTimestamp(getTimestamp());
+            params.setRuntime(end - start);
+            params.setMagicNumber(magicNumber);
+            params.setHash(hash);
+            params.setOwner(name);
+            return new ImmutableBlock(params);
+        }
+    }
+  learner_created: true
+- name: src/blockchain/hash/HashApprover.java
+  visible: true
+  text: |
+    package blockchain.hash;
+
+    @FunctionalInterface
+    public interface HashApprover {
+        boolean approve(String hash);
+    }
+  learner_created: true
+- name: src/blockchain/block/PartBlockParams.java
+  visible: true
+  text: |
+    package blockchain.block;
+
+    public interface PartBlockParams {
+        long getId();
+
+        String getPreviousHash();
+    }
+  learner_created: true
+- name: src/blockchain/data/DataProducer.java
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/projects/50/stages/274/implement
+status: Solved
+record: 6
