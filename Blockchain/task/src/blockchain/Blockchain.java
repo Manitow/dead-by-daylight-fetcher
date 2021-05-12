@@ -12,4 +12,9 @@ public interface Blockchain<B extends Block, D extends Data> {
 
     PartBlockParams getNextBlockParams();
 
-    
+    DataParams getNextDataParams();
+
+    Reward include(B block);
+
+    boolean store(D data);
+}
