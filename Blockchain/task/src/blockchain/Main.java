@@ -26,4 +26,11 @@ public class Main {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         final Blockchain<Block, SignedData> blockchain = new MyBlockchain();
-        final ExecutorServic
+        final ExecutorService minerExecutorService = Executors.newFixedThreadPool(NUMBER_OF_MINERS);
+        final HashFunction hashFunction = new SHA256HashFunction();
+        final SimpleMinerParams minerParams = new SimpleMinerParams();
+        minerParams.setHashFunction(hashFunction);
+        for (int count = 0; count < NUMBER_OF_BLOCKS; count++) {
+            final HashApprover hashApprover = blockchain.getApprover();
+            minerParams.setHashApprover(hashApprover);
+            minerParams.setBlockParams(blockchain.getN
