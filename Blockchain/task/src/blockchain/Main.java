@@ -33,4 +33,14 @@ public class Main {
         for (int count = 0; count < NUMBER_OF_BLOCKS; count++) {
             final HashApprover hashApprover = blockchain.getApprover();
             minerParams.setHashApprover(hashApprover);
-            minerParams.setBlockParams(blockchain.getN
+            minerParams.setBlockParams(blockchain.getNextBlockParams());
+            final List<Callable<Block>> tasks = new ArrayList<>(NUMBER_OF_MINERS);
+            for (int j = 0; j < NUMBER_OF_MINERS; j++) {
+                minerParams.setName("miner" + j);
+                final ComputeMiner miner = new ComputeMiner(minerParams);
+                tasks.add(miner::mine);
+            }
+            final Block block = minerExecutorService.invokeAny(tasks);
+            blockchain.include(block);
+        }
+        System.out.println(bloc
