@@ -43,4 +43,10 @@ public class Main {
             final Block block = minerExecutorService.invokeAny(tasks);
             blockchain.include(block);
         }
-        System.out.println(bloc
+        System.out.println(blockchain);
+        minerExecutorService.shutdown();
+        if (!minerExecutorService.awaitTermination(1, TimeUnit.SECONDS)) {
+            minerExecutorService.shutdownNow();
+        }
+    }
+}
