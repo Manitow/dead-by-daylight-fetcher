@@ -38,4 +38,20 @@ public class MyBlockchain implements Blockchain<Block, SignedData> {
     }
 
     protected void prepareNext() {
-        dataSet.
+        dataSet.clear();
+        approver = new NZerosHashApprover(nZeros.getCount());
+        blockParams = new ImmutablePartBlockParams(blockId++, getLastHash());
+    }
+
+    protected String getLastHash() {
+        Block last = blocks.peekLast();
+        return last != null ? last.getHash() : "0";
+    }
+
+    @Override
+    public HashApprover getApprover() {
+        return approver;
+    }
+
+    @Override
+    public PartBlockParams getNextBlockParams(
