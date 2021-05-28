@@ -54,4 +54,21 @@ public class MyBlockchain implements Blockchain<Block, SignedData> {
     }
 
     @Override
-    public PartBlockParams getNextBlockParams(
+    public PartBlockParams getNextBlockParams() {
+        return blockParams;
+    }
+
+    @Override
+    public synchronized DataParams getNextDataParams() {
+        return new ImmutableDataParams(dataId++);
+    }
+
+    @Override
+    public Reward include(Block block) {
+        synchronized (lock) {
+            String previousHash = getLastHash();
+            if (!previousHash.equals(block.getPreviousHash())) {
+                return VirtualCoin.ZERO;
+            }
+            String nStatus = nZeros.getNextStatus();
+            List<Data> data = new ArrayList<>(da
