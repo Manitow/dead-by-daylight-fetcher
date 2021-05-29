@@ -86,4 +86,21 @@ public class MyBlockchain implements Blockchain<Block, SignedData> {
         synchronized (lock) {
             while (blocks.isEmpty()) {
                 try {
-                  
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    return false;
+                }
+            }
+            if (data.getId() >= blockId) {
+                return dataSet.add(data);
+            } else {
+                return false;
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringJoiner joiner = new StringJoiner("\n\n");
+        for (Block block : blocks) {
+            joiner.add(block.toStrin
