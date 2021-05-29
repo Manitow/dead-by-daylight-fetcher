@@ -103,4 +103,8 @@ public class MyBlockchain implements Blockchain<Block, SignedData> {
     public String toString() {
         StringJoiner joiner = new StringJoiner("\n\n");
         for (Block block : blocks) {
-            joiner.add(block.toStrin
+            joiner.add(block.toString());
+        }
+        return joiner.toString();
+    }
+}
