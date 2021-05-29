@@ -71,4 +71,19 @@ public class MyBlockchain implements Blockchain<Block, SignedData> {
                 return VirtualCoin.ZERO;
             }
             String nStatus = nZeros.getNextStatus();
-            List<Data> data = new ArrayList<>(da
+            List<Data> data = new ArrayList<>(dataSet);
+            VirtualCoin coin = new VirtualCoin(reward);
+            NZerosBlock nextBlock = new NZerosBlock(block, nStatus, data, coin);
+            blocks.add(nextBlock);
+            prepareNext();
+            lock.notifyAll();
+        }
+        return new VirtualCoin(reward);
+    }
+
+    @Override
+    public boolean store(SignedData data) {
+        synchronized (lock) {
+            while (blocks.isEmpty()) {
+                try {
+                  
