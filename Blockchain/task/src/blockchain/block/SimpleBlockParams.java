@@ -27,4 +27,31 @@ public class SimpleBlockParams implements BlockParams {
     }
 
     public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    @Override
+    public long getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(long runtime) {
+        this.runtime = runtime;
+    }
+
+    @Override
+    public long getMagicNumber() {
+        return magicNumber;
+    }
+
+    public void setMagicNumber(long magicNumber) {
+        this.magicNumber = magicNumber;
+    }
+
+    @Override
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
  
