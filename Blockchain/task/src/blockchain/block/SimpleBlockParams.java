@@ -76,4 +76,19 @@ public class SimpleBlockParams implements BlockParams {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SimpleBlockParams that = (SimpleBlockParams) o;
-        return id =
+        return id == that.id &&
+                timestamp == that.timestamp &&
+                runtime == that.runtime &&
+                magicNumber == that.magicNumber &&
+                Objects.equals(hash, that.hash) &&
+                Objects.equals(previousHash, that.previousHash) &&
+                Objects.equals(owner, that.owner);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, timestamp, runtime, magicNumber, hash, previousHash, owner);
+    }
+
+    @Override
+    public String toS
