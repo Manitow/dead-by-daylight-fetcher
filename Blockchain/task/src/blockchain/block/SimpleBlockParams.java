@@ -54,4 +54,26 @@ public class SimpleBlockParams implements BlockParams {
     }
 
     public void setHash(String hash) {
- 
+        this.hash = hash;
+    }
+
+    @Override
+    public String getPreviousHash() {
+        return previousHash;
+    }
+
+    @Override
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SimpleBlockParams that = (SimpleBlockParams) o;
+        return id =
