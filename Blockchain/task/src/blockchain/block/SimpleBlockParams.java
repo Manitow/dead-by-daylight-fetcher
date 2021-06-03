@@ -91,4 +91,15 @@ public class SimpleBlockParams implements BlockParams {
     }
 
     @Override
-    public String toS
+    public String toString() {
+        return "SimpleBlockParams{" +
+                "id=" + id +
+                ", timestamp=" + timestamp +
+                ", runtime=" + runtime +
+                ", magicNumber=" + magicNumber +
+                ", hash='" + hash + '\'' +
+                ", previousHash='" + previousHash + '\'' +
+                ", owner='" + owner + '\'' +
+                '}';
+    }
+}
