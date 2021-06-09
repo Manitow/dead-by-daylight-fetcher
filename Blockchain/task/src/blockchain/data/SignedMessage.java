@@ -29,4 +29,12 @@ public class SignedMessage extends Message implements SignedData {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         SignedMessage that = (SignedMessage) o;
-        return Objects.equals(key, that.ke
+        return Objects.equals(key, that.key) &&
+                Objects.equals(sign, that.sign);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), key, sign);
+    }
+}
