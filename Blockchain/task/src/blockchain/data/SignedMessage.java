@@ -11,3 +11,22 @@ public class SignedMessage extends Message implements SignedData {
         super(id, text);
         this.key = key;
         this.sign = sign;
+    }
+
+    @Override
+    public PublicKey getKey() {
+        return key;
+    }
+
+    @Override
+    public String getSign() {
+        return sign;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SignedMessage that = (SignedMessage) o;
+        return Objects.equals(key, that.ke
