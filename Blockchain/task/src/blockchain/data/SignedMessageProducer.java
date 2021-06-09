@@ -19,4 +19,20 @@ public class SignedMessageProducer extends MessageProducer<SignedMessage> {
     protected final PrivateKey privateKey;
 
     public SignedMessageProducer(String name, List<String> texts,
-                                 Consumer<SignedMessage> consumer, Supplier<DataParams> params
+                                 Consumer<SignedMessage> consumer, Supplier<DataParams> params) {
+        super(name, texts, consumer);
+        this.params = params;
+        this.keysGenerator = getKeysGenerator();
+        this.keysGenerator.generateKeys();
+        this.publicKey = keysGenerator.getPublicKey();
+        this.privateKey = keysGenerator.getPrivateKey();
+    }
+
+    protected KeysGenerator getKeysGenerator() {
+        return new RSAGenerator(1024);
+    }
+
+    @Override
+    public SignedMessage get() {
+        try {
+       
