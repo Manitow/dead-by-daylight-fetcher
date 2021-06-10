@@ -35,4 +35,14 @@ public class SignedMessageProducer extends MessageProducer<SignedMessage> {
     @Override
     public SignedMessage get() {
         try {
-       
+            DataParams dataParams = params.get();
+            long id = dataParams.getId();
+            String text = getRandomText();
+            String message = say(text);
+            String sign = RSACryptographer.getInstance().sign(privateKey, message);
+            return new SignedMessage(id, message, publicKey, sign);
+        } catch (InvalidKeyException | SignatureException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+}
