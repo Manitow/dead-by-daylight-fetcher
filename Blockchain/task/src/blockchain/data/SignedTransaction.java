@@ -43,3 +43,11 @@ public class SignedTransaction implements Transaction, SignedData {
 
     @Override
     public String getSign() {
+        return sign;
+    }
+
+    @Override
+    public PublicKey getKey() {
+        return key;
+    }
+}
