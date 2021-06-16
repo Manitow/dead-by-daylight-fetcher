@@ -13,4 +13,33 @@ public class SignedTransaction implements Transaction, SignedData {
     private final PublicKey key;
 
     public SignedTransaction(long id, String from, String to, Reward reward, String sign, PublicKey key) {
-        this.i
+        this.id = id;
+        this.from = from;
+        this.to = to;
+        this.reward = reward;
+        this.sign = sign;
+        this.key = key;
+    }
+
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public String getFrom() {
+        return from;
+    }
+
+    @Override
+    public String getTo() {
+        return to;
+    }
+
+    @Override
+    public Reward getReward() {
+        return reward;
+    }
+
+    @Override
+    public String getSign() {
