@@ -32,4 +32,16 @@ public class ComputeMiner implements Miner, Callable<Block> {
     }
 
     @Override
-    publi
+    public Block mine() {
+        long magicNumber;
+        String hash;
+        long start = getTimestamp();
+        do {
+            magicNumber = random.nextLong();
+            hash = hashFunction.hash(magicNumber);
+            if (Thread.currentThread().isInterrupted()) {
+                return ImmutableBlock.EMPTY;
+            }
+        } while (!hashApprover.approve(hash));
+        long end = getTimestamp();
+        SimpleBlockParams params = new SimpleBlockParams
