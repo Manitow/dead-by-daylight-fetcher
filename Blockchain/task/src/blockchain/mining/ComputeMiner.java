@@ -44,4 +44,17 @@ public class ComputeMiner implements Miner, Callable<Block> {
             }
         } while (!hashApprover.approve(hash));
         long end = getTimestamp();
-        SimpleBlockParams params = new SimpleBlockParams
+        SimpleBlockParams params = new SimpleBlockParams(blockParams);
+        params.setTimestamp(getTimestamp());
+        params.setRuntime(end - start);
+        params.setMagicNumber(magicNumber);
+        params.setHash(hash);
+        params.setOwner(name);
+        return new ImmutableBlock(params);
+    }
+
+    @Override
+    public Block call() {
+        return mine();
+    }
+}
