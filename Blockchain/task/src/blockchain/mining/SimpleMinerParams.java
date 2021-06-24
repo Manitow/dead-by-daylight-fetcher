@@ -24,4 +24,25 @@ public class SimpleMinerParams implements MinerParams {
         return hashFunction;
     }
 
-    public void setHashFunction(HashFunction hashFunc
+    public void setHashFunction(HashFunction hashFunction) {
+        this.hashFunction = hashFunction;
+    }
+
+    @Override
+    public HashApprover getHashApprover() {
+        return hashApprover;
+    }
+
+    public void setHashApprover(HashApprover hashApprover) {
+        this.hashApprover = hashApprover;
+    }
+
+    @Override
+    public PartBlockParams getBlockParams() {
+        return blockParams;
+    }
+
+    public void setBlockParams(PartBlockParams blockParams) {
+        this.blockParams = blockParams;
+    }
+}
