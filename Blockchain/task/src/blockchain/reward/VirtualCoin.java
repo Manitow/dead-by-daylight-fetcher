@@ -15,3 +15,23 @@ public class VirtualCoin implements Reward {
 
     @Override
     public long getAmount() {
+        return amount;
+    }
+
+    @Override
+    public String getCurrency() {
+        return currency;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VirtualCoin that = (VirtualCoin) o;
+        return amount == that.amount &&
+                Objects.equals(currency, that.currency);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amo
