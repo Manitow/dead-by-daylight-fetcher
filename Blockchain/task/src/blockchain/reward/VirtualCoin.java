@@ -34,4 +34,11 @@ public class VirtualCoin implements Reward {
 
     @Override
     public int hashCode() {
-        return Objects.hash(amo
+        return Objects.hash(amount, currency);
+    }
+
+    @Override
+    public String toString() {
+        return amount + " " + currency;
+    }
+}
