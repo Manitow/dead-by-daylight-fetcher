@@ -6,4 +6,7 @@ import java.security.PublicKey;
 public interface KeysGenerator {
     void generateKeys();
 
-    Private
+    PrivateKey getPrivateKey();
+
+    PublicKey getPublicKey();
+}
