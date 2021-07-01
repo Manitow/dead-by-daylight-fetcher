@@ -32,4 +32,7 @@ public class NZeros {
         } else {
             increasedCount = 0;
             decreasedCount = 0;
-         
+            return "N stays the same";
+        }
+    }
+}
