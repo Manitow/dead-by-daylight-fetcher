@@ -35,4 +35,17 @@ public class Main {
         }
     }
 
-   
+    private static class HashTable<T> {
+        private int size;
+        private TableEntry[] table;
+
+        public HashTable(int size) {
+            this.size = size;
+            table = new TableEntry[size];
+        }
+
+        public Set<TableEntry<T>> entrySet() {
+            HashSet<TableEntry<T>> set = new HashSet<>();
+            for (TableEntry tableEntry : table) {
+                if (tableEntry != null) {
+                    set.add(tableEntry);
