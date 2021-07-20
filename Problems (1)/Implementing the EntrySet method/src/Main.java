@@ -49,3 +49,19 @@ public class Main {
             for (TableEntry tableEntry : table) {
                 if (tableEntry != null) {
                     set.add(tableEntry);
+                }
+            }
+            return set;
+        }
+
+        public boolean put(int key, T value) {
+            int hash = findKey(key);
+            if (key == -1) {
+                return false;
+            }
+            if (table[hash] == null) {
+                table[hash] = new TableEntry(key, value);
+            } else {
+                TableEntry entry = table[hash];
+                table[hash] = new TableEntry(key, entry.getValue() + " " + value);
+            }
