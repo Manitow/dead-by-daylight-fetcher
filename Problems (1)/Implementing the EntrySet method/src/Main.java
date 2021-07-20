@@ -82,3 +82,18 @@ public class Main {
                 hash = (hash + 1) % size;
                 if (hash == key % size) {
                     return -1;
+                }
+            }
+            return hash;
+        }
+
+        private void rehash() {
+            TableEntry[] target = table;
+            table = new TableEntry[size];
+            for (TableEntry tableEntry : target) {
+                int hash = findKey(tableEntry.key);
+                table[hash] = tableEntry;
+            }
+        }
+    }
+}
