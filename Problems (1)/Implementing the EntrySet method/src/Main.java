@@ -65,3 +65,20 @@ public class Main {
                 TableEntry entry = table[hash];
                 table[hash] = new TableEntry(key, entry.getValue() + " " + value);
             }
+            return true;
+        }
+
+        public T get(int key) {
+            int hash = findKey(key);
+            if (hash == -1) {
+                return null;
+            }
+            return (T) table[hash].getValue();
+        }
+
+        private int findKey(int key) {
+            int hash = key % size;
+            while (!(table[hash] == null || table[hash].getKey() == key)) {
+                hash = (hash + 1) % size;
+                if (hash == key % size) {
+                    return -1;
