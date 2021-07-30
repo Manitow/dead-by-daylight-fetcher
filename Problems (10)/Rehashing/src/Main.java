@@ -17,4 +17,27 @@ public class Main {
         private final int key;
         private final T value;
 
-        public Tab
+        public TableEntry(int key, T value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public int getKey() {
+            return key;
+        }
+
+        public T getValue() {
+            return value;
+        }
+    }
+
+    private static class HashTable<T> {
+        private int size;
+        private TableEntry[] table;
+
+        public HashTable(int size) {
+            this.size = size;
+            table = new TableEntry[size];
+        }
+
+    
