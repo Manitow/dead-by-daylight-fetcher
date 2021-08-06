@@ -92,4 +92,19 @@ public class Main {
             StringBuilder tableStringBuilder = new StringBuilder();
 
             for (int i = 0; i < table.length; i++) {
-          
+                if (table[i] == null) {
+                    tableStringBuilder.append(i + ": null");
+                } else {
+                    tableStringBuilder.append(i + ": key=" + table[i].getKey()
+                            + ", value=" + table[i].getValue());
+                }
+
+                if (i < table.length - 1) {
+                    tableStringBuilder.append("\n");
+                }
+            }
+
+            return tableStringBuilder.toString();
+        }
+    }
+}
