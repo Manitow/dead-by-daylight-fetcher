@@ -40,4 +40,21 @@ public class Main {
             table = new TableEntry[size];
         }
 
-    
+        public boolean put(int key, T value) {
+            int index = findKey(key);
+            if (index == -1) {
+                rehash();
+            }
+            index = findKey(key);
+            if (index == -1) {
+                return false;
+            }
+            table[index] = new TableEntry(key, value);
+            return true;
+        }
+
+        public T get(int key) {
+            int idx = findKey(key);
+
+            if (idx == -1 || table[idx] == null) {
+          
