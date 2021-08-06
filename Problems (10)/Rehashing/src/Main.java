@@ -57,4 +57,24 @@ public class Main {
             int idx = findKey(key);
 
             if (idx == -1 || table[idx] == null) {
-          
+                return null;
+            }
+
+            return (T) table[idx].getValue();
+        }
+
+        private int findKey(int key) {
+            int hash = key % size;
+
+            while (!(table[hash] == null || table[hash].getKey() == key)) {
+                hash = (hash + 1) % size;
+
+                if (hash == key % size) {
+                    return -1;
+                }
+            }
+
+            return hash;
+        }
+
+        private
