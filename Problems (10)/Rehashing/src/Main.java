@@ -77,4 +77,19 @@ public class Main {
             return hash;
         }
 
-        private
+        private void rehash() {
+            TableEntry[] target = this.table;
+            size *= 2;
+            table = new TableEntry[size];
+            for (TableEntry entry : target) {
+                int index = findKey(entry.getKey());
+                table[index] = entry;
+            }
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder tableStringBuilder = new StringBuilder();
+
+            for (int i = 0; i < table.length; i++) {
+          
