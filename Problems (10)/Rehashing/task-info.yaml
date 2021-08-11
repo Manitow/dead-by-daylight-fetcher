@@ -1,3 +1,10 @@
 type: code
 files:
-- name: src/Main.
+- name: src/Main.java
+  visible: true
+  text: "public class Main {\n    private static class TableEntry<T> {\n        private\
+    \ final int key;\n        private final T value;\n\n        public TableEntry(int\
+    \ key, T value) {\n            this.key = key;\n            this.value = value;\n\
+    \        }\n\n        public int getKey() {\n            return key;\n       \
+    \ }\n\n        public T getValue() {\n            return value;\n        }\n \
+    \   }\n\n    private static class HashTable<T> {\n        pri
