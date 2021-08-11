@@ -19,4 +19,9 @@ files:
     \ == key)) {\n                hash = (hash + 1) % size;\n\n                if\
     \ (hash == key % size) {\n                    return -1;\n                }\n\
     \            }\n\n            return hash;\n        }\n\n        private void\
-    \ rehash() {
+    \ rehash() {\n            // put your code here\n        }\n\n        @Override\n\
+    \        public String toString() {\n            StringBuilder tableStringBuilder\
+    \ = new StringBuilder();\n\n            for (int i = 0; i < table.length; i++)\
+    \ {\n                if (table[i] == null) {\n                    tableStringBuilder.append(i\
+    \ + \": null\");\n                } else {\n                    tableStringBuilder.append(i\
+    \ + \": key=\" + table[i].g
