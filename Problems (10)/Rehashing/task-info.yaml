@@ -24,4 +24,10 @@ files:
     \ = new StringBuilder();\n\n            for (int i = 0; i < table.length; i++)\
     \ {\n                if (table[i] == null) {\n                    tableStringBuilder.append(i\
     \ + \": null\");\n                } else {\n                    tableStringBuilder.append(i\
-    \ + \": key=\" + table[i].g
+    \ + \": key=\" + table[i].getKey()\n                                         \
+    \       + \", value=\" + table[i].getValue());\n                }\n\n        \
+    \        if (i < table.length - 1) {\n                    tableStringBuilder.append(\"\
+    \\n\");\n                }\n            }\n\n            return tableStringBuilder.toString();\n\
+    \        }\n    }\n\n    public static void main(String[] args) {\n        //\
+    \ put your code here\n    }\n}"
+  learner_cr
