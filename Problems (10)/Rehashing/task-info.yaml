@@ -30,4 +30,7 @@ files:
     \\n\");\n                }\n            }\n\n            return tableStringBuilder.toString();\n\
     \        }\n    }\n\n    public static void main(String[] args) {\n        //\
     \ put your code here\n    }\n}"
-  learner_cr
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6949
+status: Solved
+record: -1
