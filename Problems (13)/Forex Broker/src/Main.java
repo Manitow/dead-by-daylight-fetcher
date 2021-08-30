@@ -19,4 +19,24 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             Option option = new Option(amountList[i]);
             if (amountList[i] > 0) {
-                buyComma
+                buyCommand = new BuyCommand(option);
+                broker.setCommand(buyCommand);
+                broker.executeCommand();
+            } else {
+                sellCommand = new SellCommand(option);
+                broker.setCommand(sellCommand);
+                broker.executeCommand();
+            }
+        }
+    }
+}
+
+class Option {
+    private int amount;
+
+    Option(int amount) {
+        this.amount = amount;
+    }
+
+    void buy() {
+        System.out.println(amount + " was bou
