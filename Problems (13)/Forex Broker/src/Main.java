@@ -69,4 +69,18 @@ class SellCommand implements Command {
 
     @Override
     public void execute() {
-        op
+        option.sell();
+    }
+}
+
+class Broker {
+    private Command command;
+
+    void setCommand(Command command) {
+        this.command = command;
+    }
+
+    void executeCommand() {
+        this.command.execute();
+    }
+}
