@@ -12,4 +12,25 @@ files:
 
     interface Storable {
         int getInventoryLength();
-        String getInventoryItem(int ind
+        String getInventoryItem(int index);
+        void setInventoryItem(int index, String item);
+    }
+
+    interface Command {
+        void execute();
+    }
+
+    class CommandMove {
+        Movable entity;
+        int xMovement;
+        int yMovement;
+    }
+
+    class CommandPickItem {
+        Storable entity;
+        String item;
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5159
+status: Solved
+record: -1
