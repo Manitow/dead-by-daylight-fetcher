@@ -38,4 +38,11 @@ class CommandPickItem implements Command {
 
     @Override
     public void execute() {
-        for (int i = 0; i < entity
+        for (int i = 0; i < entity.getInventoryLength(); i++) {
+            if (entity.getInventoryItem(i) == null) {
+                entity.setInventoryItem(i, item);
+                break;
+            }
+        }
+    }
+}
