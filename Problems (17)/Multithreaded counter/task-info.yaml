@@ -7,4 +7,11 @@ files:
 
         int count = 0;
 
-        publ
+        public void inc() {
+            count++;
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2647
+status: Solved
+record: -1
