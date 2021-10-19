@@ -8,3 +8,5 @@ class CountDownCounter {
 
     public synchronized void decrement() {
         count--;
+    }
+}
