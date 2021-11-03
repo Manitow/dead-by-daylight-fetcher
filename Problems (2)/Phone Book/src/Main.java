@@ -16,4 +16,22 @@ public class Main {
                 String value = table.get(key);
                 if (value != null) {
                     System.out.println(value);
-                } e
+                } else {
+                    System.out.println(-1);
+                }
+            } else if ("remove".equals(command)) {
+                int key = scanner.nextInt();
+                table.remove(key);
+            }
+        }
+    }
+
+    private static class TableEntry<T> {
+        private final int key;
+        private final T value;
+        private boolean removed;
+
+        public TableEntry(int key, T value) {
+            this.key = key;
+            this.value = value;
+        }
