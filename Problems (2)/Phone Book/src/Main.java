@@ -35,3 +35,28 @@ public class Main {
             this.key = key;
             this.value = value;
         }
+
+        public int getKey() {
+            return key;
+        }
+
+        public T getValue() {
+            return value;
+        }
+
+        public void remove() {
+            removed = true;
+        }
+
+        public boolean isRemoved() {
+            return removed;
+        }
+    }
+
+    private static class HashTable<T> {
+        private int size;
+        private TableEntry[] table;
+
+        public HashTable(int size) {
+            this.size = size;
+            table = new TableEntr
