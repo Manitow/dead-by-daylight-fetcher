@@ -59,4 +59,21 @@ public class Main {
 
         public HashTable(int size) {
             this.size = size;
-            table = new TableEntr
+            table = new TableEntry[size];
+        }
+
+        public boolean put(int key, T value) {
+            int hash = findKey(key);
+            if (hash == -1) {
+                return false;
+            }
+            table[hash] = new TableEntry(key, value);
+            return true;
+        }
+
+        public T get(int key) {
+            int hash = findKey(key);
+            if (hash == -1) {
+                return null;
+            }
+            TableEntry entry = tabl
