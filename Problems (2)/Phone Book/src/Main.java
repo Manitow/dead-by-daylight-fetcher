@@ -93,4 +93,19 @@ public class Main {
 
         private int findKey(int key) {
             int hash = key % size;
-            while (!(table[hash] == null || table[hash].
+            while (!(table[hash] == null || table[hash].getKey() == key)) {
+                hash = (hash + 1) % size;
+                if (hash == key % size) {
+                    return -1;
+                }
+            }
+            return hash;
+        }
+
+        private void rehash() {
+            TableEntry[] target = table;
+            table = new TableEntry[size];
+            for (TableEntry entry : target) {
+                int hash = findKey(entry.getKey());
+                table[hash] = entry;
+            }
