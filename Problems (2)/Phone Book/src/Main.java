@@ -76,4 +76,21 @@ public class Main {
             if (hash == -1) {
                 return null;
             }
-            TableEntry entry = tabl
+            TableEntry entry = table[hash];
+            if (entry != null && !entry.isRemoved()) {
+                return (T) entry.getValue();
+            } else {
+                return null;
+            }
+        }
+
+        public void remove(int key) {
+            int hash = findKey(key);
+            if (hash != -1 && table[hash] != null) {
+                table[hash].remove();
+            }
+        }
+
+        private int findKey(int key) {
+            int hash = key % size;
+            while (!(table[hash] == null || table[hash].
