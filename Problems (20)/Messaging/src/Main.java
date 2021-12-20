@@ -30,4 +30,14 @@ class AsyncMessageSenderImpl implements AsyncMessageSender {
         for (Message msg : messages) {
             for (int i = 0; i < repeatFactor; i++) {
                 executor.submit(() -> {
-                    System.out.printf("(%s>%s): %s\n", ms
+                    System.out.printf("(%s>%s): %s\n", msg.from, msg.to, msg.text); // do not change it
+                });
+            }
+        }
+    }
+
+    @Override
+    public void stop() {
+        executor.shutdown();
+    }
+}
