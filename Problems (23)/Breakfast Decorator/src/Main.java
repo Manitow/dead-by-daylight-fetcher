@@ -78,4 +78,32 @@ class Butter extends Decorator {
 
 class Jam extends Decorator {
 
-    private Bread
+    private Bread bread;
+
+    Jam(Bread bread) {
+        this.bread = bread;
+    }
+
+    @Override
+    String getDescription() {
+        return bread.getDescription() + ", Jam";
+    }
+
+    @Override
+    int getKcal() {
+        return bread.getKcal() + 120;
+    }
+}
+
+class Cheese extends Decorator {
+
+    private Bread bread;
+
+    Cheese(Bread bread) {
+        this.bread = bread;
+    }
+
+    @Override
+    String getDescription() {
+        return bread.getDescription() + ", Cheese";
+ 
