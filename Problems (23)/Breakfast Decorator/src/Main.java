@@ -47,4 +47,35 @@ class Bagel extends Bread {
 class Bun extends Bread {
 
     Bun() {
-        descripti
+        description = "Bun";
+        kcal = 150;
+    }
+}
+
+abstract class Decorator extends Bread {
+    abstract String getDescription();
+
+    abstract int getKcal();
+}
+
+class Butter extends Decorator {
+    private Bread bread;
+
+    Butter(Bread bread) {
+        this.bread = bread;
+    }
+
+    @Override
+    String getDescription() {
+        return bread.getDescription() + ", Butter";
+    }
+
+    @Override
+    int getKcal() {
+        return bread.getKcal() + 50;
+    }
+}
+
+class Jam extends Decorator {
+
+    private Bread
