@@ -74,3 +74,70 @@ files:
         String getDescription() {
             return /* write your code here */ + ", Butter";
         }
+
+        @Override
+        int getKcal() {
+            return /* write your code here */ + 50;
+        }
+    }
+
+    class Jam extends Decorator {
+
+        private Bread bread;
+
+        Jam(Bread bread) {
+            this.bread = bread;
+        }
+
+        @Override
+        String getDescription() {
+            return /* write your code here */ + ", Jam";
+        }
+
+        @Override
+        int getKcal() {
+            return /* write your code here */ + 120;
+        }
+    }
+
+    class Cheese extends Decorator {
+
+        private Bread bread;
+
+        Cheese(Bread bread) {
+            this.bread = bread;
+        }
+
+        @Override
+        String getDescription() {
+            return /* write your code here */ + ", Cheese";
+        }
+
+        @Override
+        int getKcal() {
+            return /* write your code here */ + 40;
+        }
+    }
+
+    class Ham extends Decorator {
+
+        private Bread bread;
+
+        Ham(Bread bread) {
+            this.bread = bread;
+        }
+
+        @Override
+        String getDescription() {
+            return /* write your code here */ + ", Ham";
+        }
+
+        @Override
+        int getKcal() {
+            return /* write your code here */ + 2500;
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6010
+status: Solved
+record: -1
