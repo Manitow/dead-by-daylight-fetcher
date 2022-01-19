@@ -126,3 +126,6 @@ class Whip extends Decorator {
 
     @Override
     double cost() {
+        return .10 + coffee.cost();
+    }
+}
