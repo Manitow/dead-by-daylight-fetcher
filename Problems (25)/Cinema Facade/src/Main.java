@@ -21,4 +21,30 @@ class CinemaFacade {
 
     public CinemaFacade(PopcornPopper popcorn, Lights lights, Projector projector) {
         this.popcorn = popcorn;
-      
+        this.lights = lights;
+        this.projector = projector;
+    }
+
+    public void watchMovie() {
+        popcorn.on();
+        popcorn.pop();
+        lights.off();
+        projector.on();
+    }
+
+    public void endMovie() {
+        popcorn.off();
+        lights.on();
+        projector.off();
+    }
+}
+
+class PopcornPopper {
+    String description = "PopcornPopper";
+
+    public void on() {
+        System.out.println(description + " on");
+    }
+
+    public void off() {
+        Syste
