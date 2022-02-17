@@ -47,4 +47,28 @@ class PopcornPopper {
     }
 
     public void off() {
-        Syste
+        System.out.println(description + " off");
+    }
+
+    public void pop() {
+        System.out.println(description + " popping popcorn!");
+    }
+}
+
+class Projector {
+    String description = "Projector";
+
+    public void on() {
+        System.out.println(description + " on");
+    }
+
+    public void off() {
+        System.out.println(description + " off");
+    }
+}
+
+class Lights {
+    String description = "Lights";
+
+    public void on() {
+        System.out.println(descr
