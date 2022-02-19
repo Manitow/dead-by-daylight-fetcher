@@ -17,4 +17,29 @@ class ComputerFacade {
     private final Keyboard keyboard;
 
     ComputerFacade(Processor processor, Monitor monitor, Keyboard keyboard) {
-        this.processor = proc
+        this.processor = processor;
+        this.monitor = monitor;
+        this.keyboard = keyboard;
+    }
+
+    public void turnOnComputer() {
+        processor.on();
+        monitor.on();
+        keyboard.on();
+    }
+
+    public void turnOffComputer() {
+        keyboard.off();
+        monitor.off();
+        processor.off();
+    }
+}
+
+class Processor {
+    public void on() {
+        System.out.println("Processor on");
+    }
+
+    public void off() {
+        System.out.println("Processor off");
+    }
