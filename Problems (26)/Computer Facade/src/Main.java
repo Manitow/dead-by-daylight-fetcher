@@ -43,3 +43,29 @@ class Processor {
     public void off() {
         System.out.println("Processor off");
     }
+}
+
+class Monitor {
+    public void on() {
+        System.out.println("Monitor on");
+    }
+
+    public void off() {
+        System.out.println("Monitor off");
+    }
+}
+
+class Keyboard {
+    public void on() {
+        System.out.println("Keyboard on");
+        turnOnBacklight();
+    }
+
+    public void off() {
+        System.out.println("Keyboard off");
+        turnOffBacklight();
+    }
+
+    private void turnOnBacklight() {
+        System.out.println("Backlight is turned on");
+  
