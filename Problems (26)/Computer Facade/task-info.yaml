@@ -14,3 +14,24 @@ files:
         }
     }
 
+    class ComputerFacade {
+        /* Your subsystems */
+
+        public ComputerFacade(/* Write your code here */) {
+            /* Write your code here */
+        }
+
+        public void turnOnComputer() {
+            /* Write your code here */
+        }
+
+        public void turnOffComputer() {
+            /* Write your code here */
+        }
+    }
+
+    class Processor {
+        /* Your subsystem description */
+
+        public void on() {
+            /
