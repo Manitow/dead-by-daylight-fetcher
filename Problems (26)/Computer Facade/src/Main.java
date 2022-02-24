@@ -68,4 +68,9 @@ class Keyboard {
 
     private void turnOnBacklight() {
         System.out.println("Backlight is turned on");
-  
+    }
+
+    private void turnOffBacklight() {
+        System.out.println("Backlight is turned off");
+    }
+}
