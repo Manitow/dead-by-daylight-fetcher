@@ -34,4 +34,28 @@ files:
         /* Your subsystem description */
 
         public void on() {
-            /
+            /* Write your code here */
+        }
+
+        public void off() {
+            /* Write your code here */
+        }
+    }
+
+    class Monitor {
+        /* Your subsystem description */
+
+        public void on() {
+            /* Write your code here */
+        }
+
+        public void off() {
+            /* Write your code here */
+        }
+    }
+
+    class Keyboard {
+        /* Your subsystem description */
+
+        public void on() {
+            /* Writ
