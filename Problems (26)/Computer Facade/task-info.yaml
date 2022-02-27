@@ -58,4 +58,22 @@ files:
         /* Your subsystem description */
 
         public void on() {
-            /* Writ
+            /* Write your code here */
+        }
+
+        public void off() {
+            /* Write your code here */
+        }
+
+        private void turnOnBacklight() {
+            /* Write your code here */
+        }
+
+        private void turnOffBacklight() {
+            /* Write your code here */
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5532
+status: Solved
+record: -1
