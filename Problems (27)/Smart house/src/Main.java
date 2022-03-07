@@ -50,3 +50,22 @@ class StereoSystem {
     }
 
     public void off() {
+        System.out.println(description + " off");
+    }
+
+    private void turnOnFavouriteSong() {
+        System.out.println("Favourite song is playing! " + favouriteSong);
+    }
+
+    public void setFavouriteSong(String favouriteSong) {
+        this.favouriteSong = favouriteSong;
+    }
+}
+
+class Bathroom {
+    private String description = "The tub";
+    private String favouriteTemperature;
+    private String favouriteLevel;
+
+    public void fill() {
+        System.out.println(description + 
