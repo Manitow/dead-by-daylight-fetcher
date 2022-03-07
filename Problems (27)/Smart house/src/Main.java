@@ -68,4 +68,18 @@ class Bathroom {
     private String favouriteLevel;
 
     public void fill() {
-        System.out.println(description + 
+        System.out.println(description + " is being filled");
+        System.out.println("Temperature: " + favouriteTemperature);
+        System.out.println("Water level: " + favouriteLevel);
+    }
+
+    public void drain() {
+        System.out.println(description + " is being drained");
+    }
+
+    public void setFavouriteTemperature(String favouriteTemperature) {
+        this.favouriteTemperature = favouriteTemperature;
+    }
+
+    public void setFavouriteLevel(String favouriteLevel) {
+        this.favouriteLevel = favouri
