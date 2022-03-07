@@ -25,3 +25,28 @@ class SmartHouseFacade {
         this.stereoSystem = stereoSystem;
         this.bathroom = bathroom;
         this.lights = lights;
+    }
+
+    public void cameHome() {
+        stereoSystem.on();
+        bathroom.fill();
+        lights.on();
+    }
+
+    public void leaveBathroomGoSleep() {
+        bathroom.drain();
+        stereoSystem.off();
+        lights.off();
+    }
+}
+
+class StereoSystem {
+    private String description = "StereoSystem";
+    private String favouriteSong;
+
+    public void on() {
+        System.out.println(description + " on");
+        turnOnFavouriteSong();
+    }
+
+    public void off() {
