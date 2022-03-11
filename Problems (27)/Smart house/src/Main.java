@@ -100,4 +100,6 @@ class Lights {
     }
 
     public void setFavouriteСolorTemperature(String favouriteСolorTemperature) {
-        this.favouriteСolorTemperature = favouriteСolorTemper
+        this.favouriteСolorTemperature = favouriteСolorTemperature;
+    }
+}
