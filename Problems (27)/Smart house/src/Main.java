@@ -82,4 +82,22 @@ class Bathroom {
     }
 
     public void setFavouriteLevel(String favouriteLevel) {
-        this.favouriteLevel = favouri
+        this.favouriteLevel = favouriteLevel;
+    }
+}
+
+class Lights {
+    private String description = "Lights";
+    private String favouriteСolorTemperature;
+
+    public void on() {
+        System.out.println(description + " on");
+        System.out.println("Color temperature is: " + favouriteСolorTemperature);
+    }
+
+    public void off() {
+        System.out.println(description + " off");
+    }
+
+    public void setFavouriteСolorTemperature(String favouriteСolorTemperature) {
+        this.favouriteСolorTemperature = favouriteСolorTemper
