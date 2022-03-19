@@ -5,4 +5,9 @@ files:
   text: "public class Main {\n    private static class TableEntry<T> {\n        private\
     \ final int key;\n        private final T value;\n        private boolean removed;\n\
     \n        public TableEntry(int key, T value) {\n            this.key = key;\n\
-    \            th
+    \            this.value = value;\n        }\n\n        public int getKey() {\n\
+    \            return key;\n        }\n\n        public T getValue() {\n       \
+    \     return value;\n        }\n\n        public void remove() {\n           \
+    \  removed = true;   \n        }\n\n        public boolean isRemoved() {\n   \
+    \          return removed;   \n        }\n    }\n\n    private static class HashTable<T>\
+    \ {\n        private int size;\n        private TableEntr
