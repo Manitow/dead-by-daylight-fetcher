@@ -10,4 +10,9 @@ files:
     \     return value;\n        }\n\n        public void remove() {\n           \
     \  removed = true;   \n        }\n\n        public boolean isRemoved() {\n   \
     \          return removed;   \n        }\n    }\n\n    private static class HashTable<T>\
-    \ {\n        private int size;\n        private TableEntr
+    \ {\n        private int size;\n        private TableEntry[] table;\n\n      \
+    \  public HashTable(int size) {\n            this.size = size;\n            table\
+    \ = new TableEntry[size];\n        }\n\n        public boolean put(int key, T\
+    \ value) {\n            // put your code here\n        }\n\n        public T get(int\
+    \ key) {\n            // put your code here\n        }\n\n        public void\
+    \ remove(int key) {\n            // put your code here\n        }\n\n      
