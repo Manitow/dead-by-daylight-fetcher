@@ -1,0 +1,8 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: "public class Main {\n    private static class TableEntry<T> {\n        private\
+    \ final int key;\n        private final T value;\n        private boolean removed;\n\
+    \n        public TableEntry(int key, T value) {\n            this.key = key;\n\
+    \            th
