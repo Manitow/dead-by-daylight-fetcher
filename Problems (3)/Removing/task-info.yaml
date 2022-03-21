@@ -26,4 +26,11 @@ files:
     \                                                + \", value=\" + table[i].getValue()\n\
     \                                                + \", removed=\" + table[i].isRemoved());\n\
     \                }\n\n                if (i < table.length - 1) {\n          \
-    \          tableStringBuilder.append(\"\\n\");\n             
+    \          tableStringBuilder.append(\"\\n\");\n                }\n          \
+    \  }\n\n            return tableStringBuilder.toString();\n        }\n    }\n\n\
+    \    public static void main(String[] args) {\n        // put your code here\n\
+    \    }\n}"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/6950
+status: Solved
+record: -1
