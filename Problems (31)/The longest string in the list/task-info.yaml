@@ -12,4 +12,15 @@ files:
         }
 
         /* Do not change code below */
-        public static void main(String[] ar
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            String s = scanner.nextLine();
+            List<String> lst = Arrays.asList(s.split(" "));
+            changeList(lst);
+            lst.forEach(e -> System.out.print(e + " "));
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2326
+status: Solved
+record: -1
