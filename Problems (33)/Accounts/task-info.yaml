@@ -1,0 +1,12 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    // you need to filter List<Account> accounts
+
+    List<Account> nonEmptyAccounts = // write your code here
+
+    List<Account> accountsWithTooMuchMoney = // write your code here
+
+    // just an exa
