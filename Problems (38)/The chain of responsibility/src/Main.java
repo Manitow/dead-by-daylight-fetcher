@@ -20,4 +20,15 @@ interface RequestHandler {
      * Accepts a request and returns a new request with calculated digest inside the tag <digest>...</digest>
      */
     final static RequestHandler createDigest =
-            (req) ->
+            (req) -> {
+                String digest = "";
+                try {
+                    final MessageDigest md5 = MessageDigest.getInstance("MD5");
+                    final byte[] digestBytes = md5.digest(req.getData().getBytes("UTF-8"));
+                    digest = new String(Base64.getEncoder().encode(digestBytes));
+                } catch (Exception ignored) { }
+                return new Request(req.getData() + String.format("<digest>%s</digest>", digest));
+            };
+
+    /**
+   
