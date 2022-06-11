@@ -31,4 +31,12 @@ interface RequestHandler {
             };
 
     /**
-   
+     * Accepts a request and returns a new request with data wrapped in the tag <request>...</request>
+     */
+    final static RequestHandler wrapInRequestTag =
+            (req) -> new Request(String.format("<request>%s</request>", req.getData()));
+
+    /**
+     * It should represents a chain of responsibility combined from another handlers.
+     * The format: commonRequestHandler = handler1.setSuccessor(handler2.setSuccessor(...))
+     * The combining method setSuccessor
