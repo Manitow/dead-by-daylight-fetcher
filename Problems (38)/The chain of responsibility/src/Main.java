@@ -39,4 +39,23 @@ interface RequestHandler {
     /**
      * It should represents a chain of responsibility combined from another handlers.
      * The format: commonRequestHandler = handler1.setSuccessor(handler2.setSuccessor(...))
-     * The combining method setSuccessor
+     * The combining method setSuccessor may has another name
+     */
+    final static RequestHandler commonRequestHandler =
+            wrapInTransactionTag.andThen(createDigest).andThen(wrapInRequestTag);
+
+/**
+ * Immutable class for representing requests.
+ * If you need to change the request data then create new request.
+ */
+static class Request {
+    private final String data;
+
+    public Request(String requestData) {
+        this.data = requestData;
+    }
+
+    public String getData() {
+        return data;
+    }
+}
