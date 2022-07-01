@@ -9,4 +9,8 @@
    <li><b>a general handler</b> is an abstract class or interface with a <b></b>method <b>handle/process/etc</b> and a method to set a next handler</li>
    <li>one or more <b>concrete handlers </b>that implement the general handler</li>
   </ul>
-  <p>Using functional style we can implement it more simple. Instead of writing all concrete handlers we can write lambda expressions (or method references). For setting next handler it's po
+  <p>Using functional style we can implement it more simple. Instead of writing all concrete handlers we can write lambda expressions (or method references). For setting next handler it's possible to use function composition in similar to functions way.</p>
+  <h2 style="text-align: center;">Problem<br></h2>
+  <p>There is a class <b>Request(data: String) </b>for representing some XML requests in a payment system. The class has a getter method <b>getData()</b> and a constructor with one argument (<b>data)</b>. See below.</p>
+  <p>Typically, the value of <b>data</b> looks like shown below (in a human-readable format, in processing it's a single line string).</p>
+  <pre><code class="lang
