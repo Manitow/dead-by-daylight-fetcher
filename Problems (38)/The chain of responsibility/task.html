@@ -23,4 +23,13 @@
 &nbsp; &lt;digest&gt;CZVMYTgc3iiOdJjFP+6dhQ==&lt;/digest&gt;
 &lt;/request&gt;</code></pre>
   <br>You should to write 
-  <b>the chain of responsibility pattern in fun
+  <b>the chain of responsibility pattern in functional style</b> for stage-by-stage request creating.
+  <div>
+   For this:
+   <div>
+    1) write a functional interface 
+    <b>RequestHandler</b> with a single abstract method 
+    <b>handle </b>and a default method; the first is needed for using lambda expressions and should accept a Request and returns new Request with changed data, the second is for combining several handlers into the one.
+   </div>
+   <div>
+    2) create a
