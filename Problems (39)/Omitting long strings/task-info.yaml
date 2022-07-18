@@ -19,4 +19,11 @@ files:
         public static void main(String[] args) throws IOException {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String str = reader.readLine();
-            List<String> 
+            List<String> list = new ArrayList<>(Arrays.asList(str.split(" ")));
+            omitLongStrings(list).forEach(System.out::println);
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2425
+status: Solved
+record: -1
