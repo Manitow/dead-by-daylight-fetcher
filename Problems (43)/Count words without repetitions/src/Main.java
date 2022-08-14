@@ -9,4 +9,9 @@ public class Main {
         int count = scanner.nextInt();
         System.out.println(Stream.generate(scanner::nextLine)
                 .limit(count + 1)
-                .flatMap(s -> Arrays.stream(s.spl
+                .flatMap(s -> Arrays.stream(s.split("\\s+")))
+                .map(String::toLowerCase)
+                .distinct()
+                .count() - 1);
+    }
+}
