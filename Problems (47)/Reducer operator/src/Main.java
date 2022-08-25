@@ -6,4 +6,22 @@ public static final BiFunction<Integer, IntBinaryOperator, IntBinaryOperator> re
         (initValue, combiner) -> (left, right) -> {
             int value = initValue;
             for (int i = left; i <= right; i++) {
-                va
+                value = combiner.applyAsInt(value, i);
+            }
+            return value;
+        };
+
+/**
+ * The operator calculates the sum in the given range (inclusively)
+ */
+public static final IntBinaryOperator sumOperator =
+        (left, right) -> {
+            int value= 0;
+            for(int i = left; i <= right; i++){
+                value += i;
+            }
+            return value;
+        };
+
+/**
+ * The operator calcu
