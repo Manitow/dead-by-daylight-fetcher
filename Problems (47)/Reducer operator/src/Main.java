@@ -24,4 +24,13 @@ public static final IntBinaryOperator sumOperator =
         };
 
 /**
- * The operator calcu
+ * The operator calculates the product in the given range (inclusively)
+ */
+public static final IntBinaryOperator productOperator =
+        (left, right) -> {
+            int value = 1;
+            for(int i = left; i <= right; i++){
+                value *= i;
+            }
+            return value;
+        };
