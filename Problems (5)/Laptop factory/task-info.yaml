@@ -2,4 +2,14 @@ type: code
 files:
 - name: src/Main.java
   visible: true
-  text: |
+  text: |-
+    class TestDrive {
+        public static void main(String[] args) throws InterruptedException {
+            Laptop laptop;
+
+            LaptopFactory dellFactory = /* write your code here */
+            LaptopFactory mackbookFactory = /* write your code here */
+
+            System.out.println("-Hello, I need Windows laptop");
+            System.out.println("-Okay! Please wait for a sec, - Calling to the DellXPSFactory. -Bring me the Dell XPS 9370");
+    
