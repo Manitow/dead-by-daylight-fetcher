@@ -9,4 +9,7 @@ files:
     \ IntBinaryOperator sumOperator = // write your code here\n\n/**\n * The operator\
     \ calculates the product in the given range (inclusively)\n */\npublic static\
     \ final IntBinaryOperator productOperator = // write your code here"
-  learner_
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2435
+status: Solved
+record: -1
