@@ -12,4 +12,15 @@ files:
 
             System.out.println("-Hello, I need Windows laptop");
             System.out.println("-Okay! Please wait for a sec, - Calling to the DellXPSFactory. -Bring me the Dell XPS 9370");
-    
+            Thread.sleep(1500);
+
+            laptop = /* write your code here */
+            System.out.println(laptop.getDescription());
+            System.out.println("There it is!\n");
+
+            System.out.println("-Hello, I need MacOS laptop");
+            System.out.println("-Okay! Please wait for a sec, - Calling to the MackBookFactory. -Bring me the MackBook Pro 13\"");
+            Thread.sleep(1500);
+
+            laptop = /* write your code here */
+            System.out.pr
