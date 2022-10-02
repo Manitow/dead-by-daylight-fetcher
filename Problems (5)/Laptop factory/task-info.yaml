@@ -23,4 +23,22 @@ files:
             Thread.sleep(1500);
 
             laptop = /* write your code here */
-            System.out.pr
+            System.out.println(laptop.getDescription());
+            System.out.println("There it is!");
+        }
+    }
+
+    interface LaptopFactory {
+        Laptop createComputer();
+    }
+
+    class MackBookFactory implements LaptopFactory {
+        @Override
+        public Laptop createComputer() {
+            LaptopDetailsFactory detailsFactory = new MackBookDetailsFactory();
+
+            return new MackBook(detailsFactory);
+        }
+    }
+
+    class DellXPSFactory implements LaptopFactor
