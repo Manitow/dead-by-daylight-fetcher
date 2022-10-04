@@ -41,4 +41,21 @@ files:
         }
     }
 
-    class DellXPSFactory implements LaptopFactor
+    class DellXPSFactory implements LaptopFactory {
+        @Override
+        public Laptop createComputer() {
+            LaptopDetailsFactory detailsFactory = new DellXPSDetailsFactory();
+
+            return new DellXPS(detailsFactory);
+        }
+    }
+
+    interface LaptopDetailsFactory {
+        Display createDisplay();
+        GraphicCard createGraphicCard();
+        Processor createProcessor();
+        SSD createSSD();
+    }
+
+    class MackBookDetailsFactory implements LaptopDetailsFactory {
+        @Overrid
