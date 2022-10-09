@@ -58,4 +58,25 @@ files:
     }
 
     class MackBookDetailsFactory implements LaptopDetailsFactory {
-        @Overrid
+        @Override
+        public Display createDisplay() {
+            return new MackBookDisplay();
+        }
+
+        @Override
+        public GraphicCard createGraphicCard() {
+            return new MackBookGraphicCard();
+        }
+
+        @Override
+        public Processor createProcessor() {
+            return new MackBookProcessor();
+        }
+
+        @Override
+        public SSD createSSD() {
+            return new MackBookSSD();
+        }
+    }
+
+    class DellX
