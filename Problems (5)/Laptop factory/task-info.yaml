@@ -130,4 +130,23 @@ files:
         @Override
         public String getDescription() {
             return "This is THE MackBook Pro 13\"\n" + super.toString();
-    
+        }
+    }
+
+    class DellXPS extends Laptop {
+
+        DellXPS(LaptopDetailsFactory detailsFactory) {
+            display = detailsFactory.createDisplay();
+            graphicCard = detailsFactory.createGraphicCard();
+            processor = detailsFactory.createProcessor();
+            ssd = detailsFactory.createSSD();
+        }
+
+        @Override
+        public String getDescription() {
+            return "This is Dell XPS 9370\n" + super.toString();
+        }
+    }
+
+    interface Display {
+        String t
