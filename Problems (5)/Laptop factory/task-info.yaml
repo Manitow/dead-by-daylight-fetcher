@@ -116,4 +116,18 @@ files:
                     + "Processor: " + processor.toString() + "\n"
                     + "SSD: " + ssd.toString();
         }
- 
+    }
+
+    class MackBook extends Laptop {
+
+        MackBook(LaptopDetailsFactory detailsFactory) {
+            display = detailsFactory.createDisplay();
+            graphicCard = detailsFactory.createGraphicCard();
+            processor = detailsFactory.createProcessor();
+            ssd = detailsFactory.createSSD();
+        }
+
+        @Override
+        public String getDescription() {
+            return "This is THE MackBook Pro 13\"\n" + super.toString();
+    
