@@ -219,4 +219,9 @@ files:
         @Override
         public String toString() {
             return "256Gb SSD";
-     
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5736
+status: Solved
+record: -1
