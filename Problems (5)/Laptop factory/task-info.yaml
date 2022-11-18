@@ -173,3 +173,23 @@ files:
 
     class MackBookGraphicCard implements GraphicCard {
         @Override
+        public String toString() {
+            return "Intel Iris Plus Graphics 640";
+        }
+    }
+
+    class DellXPSGraphicCard implements GraphicCard {
+        @Override
+        public String toString() {
+            return "Intel UHD 620 GPU";
+        }
+    }
+
+    interface Processor {
+        String toString();
+    }
+
+    class MackBookProcessor implements Processor {
+
+        @Override
+        public String toStri
