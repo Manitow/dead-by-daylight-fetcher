@@ -192,4 +192,31 @@ files:
     class MackBookProcessor implements Processor {
 
         @Override
-        public String toStri
+        public String toString() {
+            return "Dual-Core i5";
+        }
+    }
+
+    class DellXPSProcessor implements Processor {
+        @Override
+        public String toString() {
+            return "Core i7";
+        }
+    }
+
+    interface SSD {
+        String toString();
+    }
+
+    class MackBookSSD implements SSD {
+        @Override
+        public String toString() {
+            return "256Gb SSD";
+        }
+    }
+
+    class DellXPSSSD implements SSD {
+        @Override
+        public String toString() {
+            return "256Gb SSD";
+     
