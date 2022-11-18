@@ -149,4 +149,27 @@ files:
     }
 
     interface Display {
-        String t
+        String toString();
+    }
+
+    class MackBookDisplay implements Display {
+
+        @Override
+        public String toString() {
+            return "13\" 4K display";
+        }
+    }
+
+    class DellXPSDisplay implements Display {
+        @Override
+        public String toString() {
+            return "13\" FHD screen";
+        }
+    }
+
+    interface GraphicCard {
+        String toString();
+    }
+
+    class MackBookGraphicCard implements GraphicCard {
+        @Override
