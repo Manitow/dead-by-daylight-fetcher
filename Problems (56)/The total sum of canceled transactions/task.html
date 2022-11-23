@@ -5,4 +5,8 @@
   <ul>
    <li><b>Transaction: </b>uuid: String, &nbsp;state: State (CANCELED, FINISHED, PROCESSING), sum: Long, created: Date</li>
    <li><b>Account: </b>number: String<b></b>, balance: Long, transactions: List&lt;Transaction&gt;</li>
-  </ul>Both classes have getters for all fields with the correspo
+  </ul>Both classes have getters for all fields with the corresponding names (getState(), getSum(), getTransactions() and so on).
+  <br>
+  <p><b></b>W<b></b>rite a method using Stream API that calculates <b>the</b> <b>total sum of canceled transactions</b> for all non-empty accounts (<b>balance &gt; 0</b>). Perhaps, <b>flatMap</b> method can help you to implement it.<a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html" rel="nofollow noopener noreferrer"></a></p>
+  <p><b></b></p>
+  <p>Classes<b> Transaction</b>
