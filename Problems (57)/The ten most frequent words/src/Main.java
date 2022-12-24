@@ -5,4 +5,11 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main {
-    publi
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Arrays.stream(scanner.nextLine().split("[^a-zA-Z0-9]+"))
+                .map(String::toLowerCase)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .sorted(Map.Entry.<String, Long>comparingByValue().reversed().thenComparing(Map.Entry::getKey))
+                .map(M
