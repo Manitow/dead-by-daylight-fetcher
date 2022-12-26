@@ -17,4 +17,12 @@ public class Main {
 
     /* Please do not modify the code below */
     public static void main(String[] args) {
-        S
+        Scanner scanner = new Scanner(System.in);
+
+        List<String> codes = Arrays.stream(scanner.nextLine()
+                .split("\\s+"))
+                .collect(Collectors.toList());
+
+        System.out.println(String.join(" ", extractCodes(codes)));
+    }
+}
