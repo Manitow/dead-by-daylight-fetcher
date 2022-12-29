@@ -33,3 +33,10 @@ public class Main {
 
         List<String> invertedParallelFlagsAsStrings =
                 invertedStreams(streams).stream()
+                        .map(LongStream::isParallel)
+                        .map(Object::toString)
+                        .collect(Collectors.toList());
+
+        System.out.println(String.join(" ", invertedParallelFlagsAsStrings));
+    }
+}
