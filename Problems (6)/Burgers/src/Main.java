@@ -28,4 +28,20 @@ abstract class BurgerStore {
     Burger orderBurger(String type) {
         Burger burger = createBurger(type);
         System.out.println("--- Making a " + burger.getName() + " ----");
-        bu
+        burger.collect();
+        burger.box();
+        return burger;
+    }
+}
+
+class McDonStore extends BurgerStore {
+    @Override
+    protected Burger createBurger(String type) {
+        Burger burger = null;
+        BurgerIngredientFactory ingredientFactory = new McDonIngredientFactory();
+
+        switch (type) {
+            case Burger.CHEESE :
+                burger = new Cheeseburger(ingredientFactory);
+                burger.setName("McDonalds Style Cheeseburger");
+             
