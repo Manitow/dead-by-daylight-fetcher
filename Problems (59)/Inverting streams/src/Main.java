@@ -20,4 +20,16 @@ public class Main {
 
         // :)
         List<LongStream> streams = Stream
-               
+                .iterate(0,
+                        i -> i < parallelFlags.size(),
+                        i -> i + 1)
+                .map(i -> {
+                    var stream = LongStream.of();
+                    if (parallelFlags.get(i)) {
+                        stream = stream.parallel();
+                    }
+                    return stream;
+                }).collect(Collectors.toList());
+
+        List<String> invertedParallelFlagsAsStrings =
+                invertedStreams(streams).stream()
