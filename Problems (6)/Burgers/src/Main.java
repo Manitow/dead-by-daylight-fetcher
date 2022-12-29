@@ -13,4 +13,19 @@ class TestDrive {
         System.out.println(burger.getName() + "\n");
 
         System.out.println("-Hello, one BurgerKing style hamburger");
-        System.out.println("-Okay! P
+        System.out.println("-Okay! Please wait for a sec, -Calling to the BurgerKingStore. -Hamburger\"");
+        burger = burgerKing.orderBurger(Burger.HAMBURGER);
+        Thread.sleep(1500);
+        System.out.println("There it is!");
+        System.out.println(burger.getName());
+    }
+}
+
+abstract class BurgerStore {
+
+    protected abstract Burger createBurger(String type);
+
+    Burger orderBurger(String type) {
+        Burger burger = createBurger(type);
+        System.out.println("--- Making a " + burger.getName() + " ----");
+        bu
