@@ -75,4 +75,23 @@ class BurgerKingStore extends BurgerStore {
                 burger.setName("BurgerKing Style Cheeseburger");
                 break;
             case Burger.VEGAN :
-                burger =
+                burger = new VeganBurger(ingredientFactory);
+                burger.setName("BurgerKing Style VeganBurger");
+                break;
+            default:
+                burger = new Hamburger(ingredientFactory);
+                burger.setName("BurgerKing Style Hamburger");
+                break;
+        }
+
+        if (burger !=null) {
+            burger.setBox("BurgerKing Box");
+        }
+
+        return burger;
+    }
+}
+
+interface BurgerIngredientFactory {
+    Bun createBun();
+    
