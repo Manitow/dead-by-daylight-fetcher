@@ -59,4 +59,20 @@ class McDonStore extends BurgerStore {
             burger.setBox("McDonalds Box");
         }
 
-        return bu
+        return burger;
+    }
+}
+
+class BurgerKingStore extends BurgerStore {
+    @Override
+    protected Burger createBurger(String type) {
+        Burger burger = null;
+        BurgerIngredientFactory ingredientFactory = new BurgerKingIngredientFactory();
+
+        switch (type) {
+            case Burger.CHEESE :
+                burger = new Cheeseburger(ingredientFactory);
+                burger.setName("BurgerKing Style Cheeseburger");
+                break;
+            case Burger.VEGAN :
+                burger =
