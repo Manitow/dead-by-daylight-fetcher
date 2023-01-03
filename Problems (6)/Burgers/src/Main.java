@@ -94,4 +94,27 @@ class BurgerKingStore extends BurgerStore {
 
 interface BurgerIngredientFactory {
     Bun createBun();
-    
+    Cheese createCheese();
+    Cutlet createCutlet();
+    Sauce createSauce();
+}
+
+class McDonIngredientFactory implements BurgerIngredientFactory {
+    @Override
+    public Bun createBun() {
+        return new McDonBun();
+    }
+
+    @Override
+    public Cheese createCheese() {
+        return new McDonCheese();
+    }
+
+    @Override
+    public Cutlet createCutlet() {
+        return new McDonCutlet();
+    }
+
+    @Override
+    public Sauce createSauce() {
+        retur
