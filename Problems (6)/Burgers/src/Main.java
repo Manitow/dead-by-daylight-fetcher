@@ -117,4 +117,30 @@ class McDonIngredientFactory implements BurgerIngredientFactory {
 
     @Override
     public Sauce createSauce() {
-        retur
+        return new McDonSauce();
+    }
+}
+
+class BurgerKingIngredientFactory implements BurgerIngredientFactory {
+    @Override
+    public Bun createBun() {
+        return new BurgerKingBun();
+    }
+
+    @Override
+    public Cheese createCheese() {
+        return new BurgerKingCheese();
+    }
+
+    @Override
+    public Cutlet createCutlet() {
+        return new BurgerKingCutlet();
+    }
+
+    @Override
+    public Sauce createSauce() {
+        return new BurgerKingSauce();
+    }
+}
+
+abstract
