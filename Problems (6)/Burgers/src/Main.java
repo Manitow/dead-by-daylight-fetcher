@@ -143,4 +143,26 @@ class BurgerKingIngredientFactory implements BurgerIngredientFactory {
     }
 }
 
-abstract
+abstract class Burger {
+    static final String CHEESE = "cheese";
+    static final String HAMBURGER = "hamburger";
+    static final String VEGAN = "vegan";
+
+    String box;
+    String name;
+    Bun bun;
+    Cutlet cutlet;
+    Sauce sauce;
+    Cheese cheese;
+
+    abstract void collect();
+
+    void box() {
+        if (box != null) {
+            System.out.println("Placing in official " + box);
+        } else {
+            System.out.println("Placing in official BurgerStore box");
+        }
+    }
+
+    
