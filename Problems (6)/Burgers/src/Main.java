@@ -186,4 +186,23 @@ abstract class Burger {
             result.append("\n");
         }
         if (cutlet != null) {
-            result.appen
+            result.append(cutlet);
+            result.append("\n");
+        }
+        if (sauce != null) {
+            result.append(sauce);
+            result.append("\n");
+        }
+        if (cheese != null) {
+            result.append(cheese);
+            result.append("\n");
+        }
+        return result.toString();
+    }
+}
+
+class Cheeseburger extends Burger {
+    BurgerIngredientFactory ingredientFactory;
+
+    Cheeseburger(BurgerIngredientFactory ingredientFactory) {
+        this.ingredient
