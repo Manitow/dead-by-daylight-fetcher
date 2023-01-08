@@ -165,4 +165,25 @@ abstract class Burger {
         }
     }
 
-    
+    String getName() {
+        return name;
+    }
+
+    void setName(String name) {
+        this.name = name;
+    }
+
+    void setBox(String box) {
+        this.box = box;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("---- ").append(name).append(" ----\n");
+        if (bun != null) {
+            result.append(bun);
+            result.append("\n");
+        }
+        if (cutlet != null) {
+            result.appen
