@@ -237,4 +237,28 @@ class Hamburger extends Burger {
 class VeganBurger extends Burger {
     BurgerIngredientFactory ingredientFactory;
 
-    VeganBurger(BurgerIngredientFactory ingredientFacto
+    VeganBurger(BurgerIngredientFactory ingredientFactory) {
+        this.ingredientFactory = ingredientFactory;
+    }
+
+    @Override
+    void collect() {
+        System.out.println("Collecting " + name);
+        bun = ingredientFactory.createBun();
+        sauce = ingredientFactory.createSauce();
+    }
+}
+
+interface Bun {
+    String toString();
+}
+
+class McDonBun implements Bun {
+    public String toString() {
+        return "McDonalds Bun";
+    }
+}
+
+class BurgerKingBun implements Bun {
+    public String toString() {
+        return "Burg
