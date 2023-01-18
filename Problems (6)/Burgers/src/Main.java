@@ -261,4 +261,34 @@ class McDonBun implements Bun {
 
 class BurgerKingBun implements Bun {
     public String toString() {
-        return "Burg
+        return "BurgerKing Bun";
+    }
+}
+
+interface Cheese {
+    String toString();
+}
+
+class McDonCheese implements Cheese {
+    public String toString() {
+        return "McDonalds Cheese";
+    }
+}
+
+class BurgerKingCheese implements Cheese {
+    public String toString() {
+        return "BurgerKing Cheese";
+    }
+}
+
+interface Cutlet {
+    String toString();
+}
+
+class McDonCutlet implements Cutlet {
+    public String toString() {
+        return "McDonalds Cutlet";
+    }
+}
+
+class BurgerKingCutlet imple
