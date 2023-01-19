@@ -4,4 +4,13 @@ files:
   visible: true
   text: |-
     class TestDrive {
-        public 
+        public static void main(String[] args) throws InterruptedException {
+            BurgerStore mcDonalds = /* write your code here */
+            BurgerStore burgerKing = /* write your code here */
+
+            Burger burger;
+
+            System.out.println("-Hello, one McDonalds style cheeseburger");
+            System.out.println("-Okay! Please wait for a sec, -Calling to the McDonaldsStore. -Cheeseburger");
+            burger = mcDonalds.orderBurger(Burger.CHEESE);
+        
