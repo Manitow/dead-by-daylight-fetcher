@@ -53,4 +53,21 @@ files:
                 case Burger.VEGAN :
                     burger = /* write your code here */
                     burger.setName("McDonalds Style VeganBurger");
-         
+                    break;
+                default:
+                    burger = /* write your code here */
+                    burger.setName("McDonalds Style Hamburger");
+                    break;
+            }
+
+            if (burger !=null) {
+                burger.setBox("McDonalds Box");
+            }
+
+            return burger;
+        }
+    }
+
+    class BurgerKingStore extends BurgerStore {
+        @Override
+        protected Burger createBurge
