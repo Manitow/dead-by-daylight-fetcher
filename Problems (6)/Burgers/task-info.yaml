@@ -70,4 +70,15 @@ files:
 
     class BurgerKingStore extends BurgerStore {
         @Override
-        protected Burger createBurge
+        protected Burger createBurger(String type) {
+            Burger burger = null;
+            BurgerIngredientFactory ingredientFactory = /* write your code here */
+
+            switch (type) {
+                case Burger.CHEESE :
+                    burger = /* write your code here */
+                    burger.setName("BurgerKing Style Cheeseburger");
+                    break;
+                case Burger.VEGAN :
+                    burger = /* write your code here */
+                    burger.setName("BurgerKing Sty
