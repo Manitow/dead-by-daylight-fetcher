@@ -81,4 +81,22 @@ files:
                     break;
                 case Burger.VEGAN :
                     burger = /* write your code here */
-                    burger.setName("BurgerKing Sty
+                    burger.setName("BurgerKing Style VeganBurger");
+                    break;
+                default:
+                    burger = /* write your code here */
+                    burger.setName("BurgerKing Style Hamburger");
+                    break;
+            }
+
+            if (burger !=null) {
+                burger.setBox("BurgerKing Box");
+            }
+
+            return burger;
+        }
+    }
+
+    interface BurgerIngredientFactory {
+        Bun createBun();
+        Cheese crea
