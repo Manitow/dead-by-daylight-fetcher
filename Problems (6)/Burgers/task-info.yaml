@@ -99,4 +99,23 @@ files:
 
     interface BurgerIngredientFactory {
         Bun createBun();
-        Cheese crea
+        Cheese createCheese();
+        Cutlet createCutlet();
+        Sauce createSauce();
+    }
+
+    class McDonIngredientFactory implements BurgerIngredientFactory {
+        @Override
+        public Bun createBun() {
+            return /* write your code here */
+        }
+
+        @Override
+        public Cheese createCheese() {
+            return /* write your code here */
+        }
+
+        @Override
+        public Cutlet createCutlet() {
+            return /* write your code here */
+        
