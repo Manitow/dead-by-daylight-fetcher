@@ -156,4 +156,26 @@ files:
         String box;
         String name;
         Bun bun;
-        Cutl
+        Cutlet cutlet;
+        Sauce sauce;
+        Cheese cheese;
+
+        abstract void collect();
+
+        void box() {
+            if (box != null) {
+                System.out.println("Placing in official " + box);
+            } else {
+                System.out.println("Placing in official BurgerStore box");
+            }
+        }
+
+        String getName() {
+            return name;
+        }
+
+        void setName(String name) {
+            this.name = name;
+        }
+
+ 
