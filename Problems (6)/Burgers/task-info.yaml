@@ -136,3 +136,24 @@ files:
         public Cheese createCheese() {
             return /* write your code here */
         }
+
+        @Override
+        public Cutlet createCutlet() {
+            return /* write your code here */
+        }
+
+        @Override
+        public Sauce createSauce() {
+            return /* write your code here */
+        }
+    }
+
+    abstract class Burger {
+        static final String CHEESE = "cheese";
+        static final String HAMBURGER = "hamburger";
+        static final String VEGAN = "vegan";
+
+        String box;
+        String name;
+        Bun bun;
+        Cutl
