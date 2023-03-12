@@ -243,4 +243,26 @@ files:
         BurgerIngredientFactory ingredientFactory;
 
         VeganBurger(BurgerIngredientFactory ingredientFactory) {
-            this.ingredientFact
+            this.ingredientFactory = ingredientFactory;
+        }
+
+        @Override
+        void collect() {
+            System.out.println("Collecting " + name);
+            bun = ingredientFactory.createBun();
+            sauce = ingredientFactory.createSauce();
+        }
+    }
+
+    interface Bun {
+        String toString();
+    }
+
+    class McDonBun implements Bun {
+        public String toString() {
+            return "McDonalds Bun";
+        }
+    }
+
+    class BurgerKingBun implements Bun {
+        public
