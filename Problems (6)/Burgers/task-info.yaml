@@ -265,4 +265,29 @@ files:
     }
 
     class BurgerKingBun implements Bun {
-        public
+        public String toString() {
+            return "BurgerKing Bun";
+        }
+    }
+
+    interface Cheese {
+        String toString();
+    }
+
+    class McDonCheese implements Cheese {
+        public String toString() {
+            return "McDonalds Cheese";
+        }
+    }
+
+    class BurgerKingCheese implements Cheese {
+        public String toString() {
+            return "BurgerKing Cheese";
+        }
+    }
+
+    interface Cutlet {
+        String toString();
+    }
+
+    class McDonCutlet 
