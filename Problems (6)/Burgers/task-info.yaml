@@ -314,4 +314,10 @@ files:
 
     class BurgerKingSauce implements Sauce {
         public String toString() {
-       
+            return "BurgerKing Sauce";
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/5738
+status: Solved
+record: -1
