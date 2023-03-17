@@ -3,4 +3,14 @@
  <body>
   <p>You have a class that implements the <strong>Runnable</strong> interface.</p> 
   <p>&nbsp;</p> 
-  <pre><code class="language-java">class Runn
+  <pre><code class="language-java">class RunnableWorker implements Runnable {
+&nbsp; &nbsp; 
+&nbsp; &nbsp; @Override
+&nbsp; &nbsp; public void run() {
+&nbsp; &nbsp; &nbsp; &nbsp; // the method does something
+&nbsp; &nbsp; }
+}</code></pre> 
+  <p>&nbsp;</p> 
+  <p>1) Create three threads using instances of the <strong>RunnableWorker</strong>. Set names to these threads like <strong>"worker-X"</strong>, where X is any suffix (the method <strong>setName(...)</strong>).</p> 
+  <p>&nbsp;</p> 
+  <p>2) Sta
