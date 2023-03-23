@@ -36,3 +36,8 @@ class Range implements Serializable {
 
 	private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
 		ois.defaultReadObject();
+		if (from > to) {
+			throw new IllegalArgumentException("Start is greater than end");
+		}
+	}
+}
