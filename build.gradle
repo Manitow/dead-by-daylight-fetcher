@@ -19,4 +19,19 @@ subprojects {
         maven { url "https://jitpack.io" }
     }
 
-    depend
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+        implementation 'com.github.stefanbirkner:system-rules:1.19.0'
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+        testCompile 'org.assertj:assertj-swing-junit:3.8.0'
+        testImplementation 'com.github.hyperskill:hs-test:v6.0.1'
+    }
+
+    sourceSets {
+        main.java.srcDir 'src'
+        test.java.srcDir 'test'
+    }
+
+    test {
+        systemProperty "file.encoding", "utf-8"
+        outputs.upT
