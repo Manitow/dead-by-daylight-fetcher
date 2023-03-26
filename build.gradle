@@ -44,3 +44,15 @@ subprojects {
                     println "#educational_plugin" + line
                 }
             }
+        }
+    }
+
+    compileJava.options.encoding = 'UTF-8'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+}
+
+wrapper {
+    gradleVersion = '5.3.1'
+}
