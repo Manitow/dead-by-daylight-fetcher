@@ -1,0 +1,7 @@
+static String sanitizeName(String name) {
+    return name.replaceAll("[ /\\\\:<>\"?*|()]", "_").replaceAll("(^[.]+)|([.]+\$)", "")
+}
+
+rootProject.name = 'Blockchain'
+
+rootProject.projectDir.eachDirRe
